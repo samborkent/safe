@@ -1,0 +1,1246 @@
+=== RUN   TestPointerDereference
+--- PASS: TestPointerDereference (0.00s)
+=== RUN   TestPointerSetValue
+--- PASS: TestPointerSetValue (0.00s)
+=== RUN   TestTypeAssert
+--- PASS: TestTypeAssert (0.00s)
+=== RUN   TestRequireTypeAssert
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testStruct cannot be asserted to *safe.testStruct2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *struct {} cannot be asserted to *safe.testStruct3
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: safe.testStruct cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: <nil> cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testInterface cannot be asserted to *safe.testInterface2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *interface {} cannot be asserted to *safe.testInterface3
+--- PASS: TestRequireTypeAssert (0.00s)
+=== RUN   TestAdd
+--- PASS: TestAdd (0.00s)
+=== RUN   TestNewArray
+--- PASS: TestNewArray (0.00s)
+=== RUN   TestArrayIndex
+--- PASS: TestArrayIndex (0.00s)
+=== RUN   TestArraySet
+--- PASS: TestArraySet (0.00s)
+=== RUN   TestChannelClose
+--- PASS: TestChannelClose (0.00s)
+=== RUN   TestChannelPushPop
+--- PASS: TestChannelPushPop (1.06s)
+=== RUN   TestCircularArrayIndex
+--- PASS: TestCircularArrayIndex (0.00s)
+=== RUN   TestCircularArraySet
+--- PASS: TestCircularArraySet (0.00s)
+=== RUN   TestDivide
+--- PASS: TestDivide (0.00s)
+=== RUN   TestMultiply
+--- PASS: TestMultiply (0.00s)
+=== RUN   TestSubtract
+--- PASS: TestSubtract (0.00s)
+=== RUN   TestPointerDereference
+--- PASS: TestPointerDereference (0.00s)
+=== RUN   TestPointerSetValue
+--- PASS: TestPointerSetValue (0.00s)
+=== RUN   TestTypeAssert
+--- PASS: TestTypeAssert (0.00s)
+=== RUN   TestRequireTypeAssert
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testStruct cannot be asserted to *safe.testStruct2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *struct {} cannot be asserted to *safe.testStruct3
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: safe.testStruct cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: <nil> cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testInterface cannot be asserted to *safe.testInterface2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *interface {} cannot be asserted to *safe.testInterface3
+--- PASS: TestRequireTypeAssert (0.00s)
+=== RUN   TestAdd
+--- PASS: TestAdd (0.00s)
+=== RUN   TestNewArray
+--- PASS: TestNewArray (0.00s)
+=== RUN   TestArrayIndex
+--- PASS: TestArrayIndex (0.00s)
+=== RUN   TestArraySet
+--- PASS: TestArraySet (0.00s)
+=== RUN   TestChannelClose
+--- PASS: TestChannelClose (0.00s)
+=== RUN   TestChannelPushPop
+--- PASS: TestChannelPushPop (1.11s)
+=== RUN   TestCircularArrayIndex
+--- PASS: TestCircularArrayIndex (0.00s)
+=== RUN   TestCircularArraySet
+--- PASS: TestCircularArraySet (0.00s)
+=== RUN   TestDivide
+--- PASS: TestDivide (0.00s)
+=== RUN   TestMultiply
+--- PASS: TestMultiply (0.00s)
+=== RUN   TestSubtract
+--- PASS: TestSubtract (0.00s)
+=== RUN   TestPointerDereference
+--- PASS: TestPointerDereference (0.00s)
+=== RUN   TestPointerSetValue
+--- PASS: TestPointerSetValue (0.00s)
+=== RUN   TestTypeAssert
+--- PASS: TestTypeAssert (0.00s)
+=== RUN   TestRequireTypeAssert
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testStruct cannot be asserted to *safe.testStruct2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *struct {} cannot be asserted to *safe.testStruct3
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: safe.testStruct cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: <nil> cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testInterface cannot be asserted to *safe.testInterface2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *interface {} cannot be asserted to *safe.testInterface3
+--- PASS: TestRequireTypeAssert (0.00s)
+=== RUN   TestAdd
+--- PASS: TestAdd (0.00s)
+=== RUN   TestNewArray
+--- PASS: TestNewArray (0.01s)
+=== RUN   TestArrayIndex
+--- PASS: TestArrayIndex (0.00s)
+=== RUN   TestArraySet
+--- PASS: TestArraySet (0.00s)
+=== RUN   TestChannelClose
+--- PASS: TestChannelClose (0.00s)
+=== RUN   TestChannelPushPop
+--- PASS: TestChannelPushPop (1.08s)
+=== RUN   TestCircularArrayIndex
+--- PASS: TestCircularArrayIndex (0.00s)
+=== RUN   TestCircularArraySet
+--- PASS: TestCircularArraySet (0.00s)
+=== RUN   TestDivide
+--- PASS: TestDivide (0.00s)
+=== RUN   TestMultiply
+--- PASS: TestMultiply (0.00s)
+=== RUN   TestSubtract
+--- PASS: TestSubtract (0.00s)
+=== RUN   TestPointerDereference
+--- PASS: TestPointerDereference (0.00s)
+=== RUN   TestPointerSetValue
+--- PASS: TestPointerSetValue (0.00s)
+=== RUN   TestTypeAssert
+--- PASS: TestTypeAssert (0.00s)
+=== RUN   TestRequireTypeAssert
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testStruct cannot be asserted to *safe.testStruct2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *struct {} cannot be asserted to *safe.testStruct3
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: safe.testStruct cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: <nil> cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testInterface cannot be asserted to *safe.testInterface2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *interface {} cannot be asserted to *safe.testInterface3
+--- PASS: TestRequireTypeAssert (0.00s)
+=== RUN   TestAdd
+--- PASS: TestAdd (0.00s)
+=== RUN   TestNewArray
+--- PASS: TestNewArray (0.01s)
+=== RUN   TestArrayIndex
+--- PASS: TestArrayIndex (0.00s)
+=== RUN   TestArraySet
+--- PASS: TestArraySet (0.00s)
+=== RUN   TestChannelClose
+--- PASS: TestChannelClose (0.00s)
+=== RUN   TestChannelPushPop
+--- PASS: TestChannelPushPop (1.09s)
+=== RUN   TestCircularArrayIndex
+--- PASS: TestCircularArrayIndex (0.00s)
+=== RUN   TestCircularArraySet
+--- PASS: TestCircularArraySet (0.00s)
+=== RUN   TestDivide
+--- PASS: TestDivide (0.00s)
+=== RUN   TestMultiply
+--- PASS: TestMultiply (0.00s)
+=== RUN   TestSubtract
+--- PASS: TestSubtract (0.00s)
+=== RUN   TestPointerDereference
+--- PASS: TestPointerDereference (0.00s)
+=== RUN   TestPointerSetValue
+--- PASS: TestPointerSetValue (0.00s)
+=== RUN   TestTypeAssert
+--- PASS: TestTypeAssert (0.00s)
+=== RUN   TestRequireTypeAssert
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testStruct cannot be asserted to *safe.testStruct2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *struct {} cannot be asserted to *safe.testStruct3
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: safe.testStruct cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: <nil> cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testInterface cannot be asserted to *safe.testInterface2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *interface {} cannot be asserted to *safe.testInterface3
+--- PASS: TestRequireTypeAssert (0.00s)
+=== RUN   TestAdd
+--- PASS: TestAdd (0.00s)
+=== RUN   TestNewArray
+--- PASS: TestNewArray (0.03s)
+=== RUN   TestArrayIndex
+--- PASS: TestArrayIndex (0.00s)
+=== RUN   TestArraySet
+--- PASS: TestArraySet (0.00s)
+=== RUN   TestChannelClose
+--- PASS: TestChannelClose (0.00s)
+=== RUN   TestChannelPushPop
+--- PASS: TestChannelPushPop (1.20s)
+=== RUN   TestCircularArrayIndex
+--- PASS: TestCircularArrayIndex (0.00s)
+=== RUN   TestCircularArraySet
+--- PASS: TestCircularArraySet (0.00s)
+=== RUN   TestDivide
+--- PASS: TestDivide (0.00s)
+=== RUN   TestMultiply
+--- PASS: TestMultiply (0.00s)
+=== RUN   TestSubtract
+--- PASS: TestSubtract (0.00s)
+=== RUN   TestPointerDereference
+--- PASS: TestPointerDereference (0.00s)
+=== RUN   TestPointerSetValue
+--- PASS: TestPointerSetValue (0.00s)
+=== RUN   TestTypeAssert
+--- PASS: TestTypeAssert (0.00s)
+=== RUN   TestRequireTypeAssert
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testStruct cannot be asserted to *safe.testStruct2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *struct {} cannot be asserted to *safe.testStruct3
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: safe.testStruct cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: <nil> cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testInterface cannot be asserted to *safe.testInterface2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *interface {} cannot be asserted to *safe.testInterface3
+--- PASS: TestRequireTypeAssert (0.00s)
+=== RUN   TestAdd
+--- PASS: TestAdd (0.00s)
+=== RUN   TestNewArray
+--- PASS: TestNewArray (0.13s)
+=== RUN   TestArrayIndex
+--- PASS: TestArrayIndex (0.00s)
+=== RUN   TestArraySet
+--- PASS: TestArraySet (0.00s)
+=== RUN   TestChannelClose
+--- PASS: TestChannelClose (0.00s)
+=== RUN   TestChannelPushPop
+--- PASS: TestChannelPushPop (1.09s)
+=== RUN   TestCircularArrayIndex
+--- PASS: TestCircularArrayIndex (0.00s)
+=== RUN   TestCircularArraySet
+--- PASS: TestCircularArraySet (0.00s)
+=== RUN   TestDivide
+--- PASS: TestDivide (0.00s)
+=== RUN   TestMultiply
+--- PASS: TestMultiply (0.00s)
+=== RUN   TestSubtract
+--- PASS: TestSubtract (0.00s)
+=== RUN   TestPointerDereference
+--- PASS: TestPointerDereference (0.00s)
+=== RUN   TestPointerSetValue
+--- PASS: TestPointerSetValue (0.00s)
+=== RUN   TestTypeAssert
+--- PASS: TestTypeAssert (0.00s)
+=== RUN   TestRequireTypeAssert
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testStruct cannot be asserted to *safe.testStruct2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *struct {} cannot be asserted to *safe.testStruct3
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: safe.testStruct cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: <nil> cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testInterface cannot be asserted to *safe.testInterface2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *interface {} cannot be asserted to *safe.testInterface3
+--- PASS: TestRequireTypeAssert (0.00s)
+=== RUN   TestAdd
+--- PASS: TestAdd (0.00s)
+=== RUN   TestNewArray
+--- PASS: TestNewArray (0.26s)
+=== RUN   TestArrayIndex
+--- PASS: TestArrayIndex (0.00s)
+=== RUN   TestArraySet
+--- PASS: TestArraySet (0.00s)
+=== RUN   TestChannelClose
+--- PASS: TestChannelClose (0.00s)
+=== RUN   TestChannelPushPop
+--- PASS: TestChannelPushPop (1.09s)
+=== RUN   TestCircularArrayIndex
+--- PASS: TestCircularArrayIndex (0.00s)
+=== RUN   TestCircularArraySet
+--- PASS: TestCircularArraySet (0.00s)
+=== RUN   TestDivide
+--- PASS: TestDivide (0.00s)
+=== RUN   TestMultiply
+--- PASS: TestMultiply (0.00s)
+=== RUN   TestSubtract
+--- PASS: TestSubtract (0.00s)
+=== RUN   TestPointerDereference
+--- PASS: TestPointerDereference (0.00s)
+=== RUN   TestPointerSetValue
+--- PASS: TestPointerSetValue (0.00s)
+=== RUN   TestTypeAssert
+--- PASS: TestTypeAssert (0.00s)
+=== RUN   TestRequireTypeAssert
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testStruct cannot be asserted to *safe.testStruct2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *struct {} cannot be asserted to *safe.testStruct3
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: safe.testStruct cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: <nil> cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testInterface cannot be asserted to *safe.testInterface2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *interface {} cannot be asserted to *safe.testInterface3
+--- PASS: TestRequireTypeAssert (0.00s)
+=== RUN   TestAdd
+--- PASS: TestAdd (0.00s)
+=== RUN   TestNewArray
+--- PASS: TestNewArray (0.24s)
+=== RUN   TestArrayIndex
+--- PASS: TestArrayIndex (0.00s)
+=== RUN   TestArraySet
+--- PASS: TestArraySet (0.00s)
+=== RUN   TestChannelClose
+--- PASS: TestChannelClose (0.00s)
+=== RUN   TestChannelPushPop
+--- PASS: TestChannelPushPop (1.12s)
+=== RUN   TestCircularArrayIndex
+--- PASS: TestCircularArrayIndex (0.00s)
+=== RUN   TestCircularArraySet
+--- PASS: TestCircularArraySet (0.00s)
+=== RUN   TestDivide
+--- PASS: TestDivide (0.00s)
+=== RUN   TestMultiply
+--- PASS: TestMultiply (0.00s)
+=== RUN   TestSubtract
+--- PASS: TestSubtract (0.00s)
+=== RUN   TestPointerDereference
+--- PASS: TestPointerDereference (0.00s)
+=== RUN   TestPointerSetValue
+--- PASS: TestPointerSetValue (0.00s)
+=== RUN   TestTypeAssert
+--- PASS: TestTypeAssert (0.00s)
+=== RUN   TestRequireTypeAssert
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testStruct cannot be asserted to *safe.testStruct2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *struct {} cannot be asserted to *safe.testStruct3
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: safe.testStruct cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: <nil> cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testInterface cannot be asserted to *safe.testInterface2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *interface {} cannot be asserted to *safe.testInterface3
+--- PASS: TestRequireTypeAssert (0.00s)
+=== RUN   TestAdd
+--- PASS: TestAdd (0.00s)
+=== RUN   TestNewArray
+--- PASS: TestNewArray (0.57s)
+=== RUN   TestArrayIndex
+--- PASS: TestArrayIndex (0.00s)
+=== RUN   TestArraySet
+--- PASS: TestArraySet (0.00s)
+=== RUN   TestChannelClose
+--- PASS: TestChannelClose (0.00s)
+=== RUN   TestChannelPushPop
+--- PASS: TestChannelPushPop (1.20s)
+=== RUN   TestCircularArrayIndex
+--- PASS: TestCircularArrayIndex (0.00s)
+=== RUN   TestCircularArraySet
+--- PASS: TestCircularArraySet (0.00s)
+=== RUN   TestDivide
+--- PASS: TestDivide (0.00s)
+=== RUN   TestMultiply
+--- PASS: TestMultiply (0.00s)
+=== RUN   TestSubtract
+--- PASS: TestSubtract (0.00s)
+=== RUN   TestPointerDereference
+--- PASS: TestPointerDereference (0.00s)
+=== RUN   TestPointerSetValue
+--- PASS: TestPointerSetValue (0.00s)
+=== RUN   TestTypeAssert
+--- PASS: TestTypeAssert (0.00s)
+=== RUN   TestRequireTypeAssert
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testStruct cannot be asserted to *safe.testStruct2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *struct {} cannot be asserted to *safe.testStruct3
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: safe.testStruct cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion to nil interface: <nil> cannot be asserted to <nil>
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *safe.testInterface cannot be asserted to *safe.testInterface2
+PANIC RECOVERED: safe.RequireTypeAssert: type assertion failed: *interface {} cannot be asserted to *safe.testInterface3
+--- PASS: TestRequireTypeAssert (0.00s)
+=== RUN   TestAdd
+--- PASS: TestAdd (0.00s)
+=== RUN   TestNewArray
+--- PASS: TestNewArray (1.37s)
+=== RUN   TestArrayIndex
+--- PASS: TestArrayIndex (0.00s)
+=== RUN   TestArraySet
+--- PASS: TestArraySet (0.00s)
+=== RUN   TestChannelClose
+--- PASS: TestChannelClose (0.00s)
+=== RUN   TestChannelPushPop
+--- PASS: TestChannelPushPop (1.25s)
+=== RUN   TestCircularArrayIndex
+--- PASS: TestCircularArrayIndex (0.00s)
+=== RUN   TestCircularArraySet
+--- PASS: TestCircularArraySet (0.00s)
+=== RUN   TestDivide
+--- PASS: TestDivide (0.00s)
+=== RUN   TestMultiply
+--- PASS: TestMultiply (0.00s)
+=== RUN   TestSubtract
+--- PASS: TestSubtract (0.00s)
+goos: linux
+goarch: amd64
+pkg: safe/test
+cpu: AMD Ryzen 7 5800H with Radeon Graphics         
+BenchmarkAddUint8
+BenchmarkAddUint8-16               	    9372	        42.27 ns/op
+BenchmarkAddUint8-16               	    9352	        38.09 ns/op
+BenchmarkAddUint8-16               	    8330	        39.51 ns/op
+BenchmarkAddUint8-16               	    9180	        38.67 ns/op
+BenchmarkAddUint8-16               	    8872	        52.56 ns/op
+BenchmarkAddUint8-16               	    8793	        37.30 ns/op
+BenchmarkAddUint8-16               	    9046	        38.76 ns/op
+BenchmarkAddUint8-16               	    9127	        39.03 ns/op
+BenchmarkAddUint8-16               	    8332	        41.55 ns/op
+BenchmarkAddUint8-16               	    8857	        39.36 ns/op
+BenchmarkSafeAddUint8
+BenchmarkSafeAddUint8-16           	    6945	        54.92 ns/op
+BenchmarkSafeAddUint8-16           	    7400	        57.73 ns/op
+BenchmarkSafeAddUint8-16           	    6100	        53.30 ns/op
+BenchmarkSafeAddUint8-16           	    7171	        64.06 ns/op
+BenchmarkSafeAddUint8-16           	    6338	        58.94 ns/op
+BenchmarkSafeAddUint8-16           	    6858	        58.26 ns/op
+BenchmarkSafeAddUint8-16           	    6979	        54.98 ns/op
+BenchmarkSafeAddUint8-16           	    6063	        56.31 ns/op
+BenchmarkSafeAddUint8-16           	    7093	        52.41 ns/op
+BenchmarkSafeAddUint8-16           	    7023	        54.92 ns/op
+BenchmarkAddInt8
+BenchmarkAddInt8-16                	    9338	        42.96 ns/op
+BenchmarkAddInt8-16                	    9026	        36.58 ns/op
+BenchmarkAddInt8-16                	    9228	        57.84 ns/op
+BenchmarkAddInt8-16                	    8860	        37.48 ns/op
+BenchmarkAddInt8-16                	    9220	        40.44 ns/op
+BenchmarkAddInt8-16                	    9340	        37.34 ns/op
+BenchmarkAddInt8-16                	    8983	        39.29 ns/op
+BenchmarkAddInt8-16                	    9498	        63.22 ns/op
+BenchmarkAddInt8-16                	    7776	        40.89 ns/op
+BenchmarkAddInt8-16                	    7792	        41.89 ns/op
+BenchmarkSafeAddInt8
+BenchmarkSafeAddInt8-16            	    6948	        50.21 ns/op
+BenchmarkSafeAddInt8-16            	    6559	        50.62 ns/op
+BenchmarkSafeAddInt8-16            	    7034	        51.02 ns/op
+BenchmarkSafeAddInt8-16            	    6672	        52.03 ns/op
+BenchmarkSafeAddInt8-16            	    7377	        52.96 ns/op
+BenchmarkSafeAddInt8-16            	    7218	        53.96 ns/op
+BenchmarkSafeAddInt8-16            	    7448	        51.83 ns/op
+BenchmarkSafeAddInt8-16            	    7024	        52.70 ns/op
+BenchmarkSafeAddInt8-16            	    7210	        62.83 ns/op
+BenchmarkSafeAddInt8-16            	    7348	        50.94 ns/op
+BenchmarkAddUint16
+BenchmarkAddUint16-16              	    9097	        38.14 ns/op
+BenchmarkAddUint16-16              	    9079	        42.56 ns/op
+BenchmarkAddUint16-16              	    8624	        38.64 ns/op
+BenchmarkAddUint16-16              	    9264	        46.65 ns/op
+BenchmarkAddUint16-16              	    9282	        39.49 ns/op
+BenchmarkAddUint16-16              	    8206	        43.47 ns/op
+BenchmarkAddUint16-16              	    9355	        39.08 ns/op
+BenchmarkAddUint16-16              	    9771	        50.25 ns/op
+BenchmarkAddUint16-16              	    8006	        42.81 ns/op
+BenchmarkAddUint16-16              	    8536	        39.84 ns/op
+BenchmarkSafeAddUint16
+BenchmarkSafeAddUint16-16          	    6208	        49.67 ns/op
+BenchmarkSafeAddUint16-16          	    7660	        60.26 ns/op
+BenchmarkSafeAddUint16-16          	    6949	        56.27 ns/op
+BenchmarkSafeAddUint16-16          	    7148	        56.68 ns/op
+BenchmarkSafeAddUint16-16          	    6902	        50.82 ns/op
+BenchmarkSafeAddUint16-16          	    7568	        47.51 ns/op
+BenchmarkSafeAddUint16-16          	    7533	        47.04 ns/op
+BenchmarkSafeAddUint16-16          	    7660	        49.88 ns/op
+BenchmarkSafeAddUint16-16          	    7575	        48.99 ns/op
+BenchmarkSafeAddUint16-16          	    7746	        47.84 ns/op
+BenchmarkAddInt16
+BenchmarkAddInt16-16               	    9530	        38.74 ns/op
+BenchmarkAddInt16-16               	    9069	        43.61 ns/op
+BenchmarkAddInt16-16               	    8754	        38.26 ns/op
+BenchmarkAddInt16-16               	    9187	        39.76 ns/op
+BenchmarkAddInt16-16               	    9475	        38.21 ns/op
+BenchmarkAddInt16-16               	    9642	        42.84 ns/op
+BenchmarkAddInt16-16               	    8736	        38.55 ns/op
+BenchmarkAddInt16-16               	    9661	        39.95 ns/op
+BenchmarkAddInt16-16               	    9360	        39.25 ns/op
+BenchmarkAddInt16-16               	    9337	        35.60 ns/op
+BenchmarkSafeAddInt16
+BenchmarkSafeAddInt16-16           	    6882	        44.64 ns/op
+BenchmarkSafeAddInt16-16           	    7628	        48.17 ns/op
+BenchmarkSafeAddInt16-16           	    7561	        51.52 ns/op
+BenchmarkSafeAddInt16-16           	    7201	        45.44 ns/op
+BenchmarkSafeAddInt16-16           	    7678	        46.83 ns/op
+BenchmarkSafeAddInt16-16           	    8113	        47.01 ns/op
+BenchmarkSafeAddInt16-16           	    7546	        46.88 ns/op
+BenchmarkSafeAddInt16-16           	    7592	        46.77 ns/op
+BenchmarkSafeAddInt16-16           	    7899	        50.39 ns/op
+BenchmarkSafeAddInt16-16           	    7327	        44.83 ns/op
+BenchmarkAddUint32
+BenchmarkAddUint32-16              	    9538	        38.47 ns/op
+BenchmarkAddUint32-16              	    4821	        66.51 ns/op
+BenchmarkAddUint32-16              	    8859	        42.86 ns/op
+BenchmarkAddUint32-16              	    9360	        39.30 ns/op
+BenchmarkAddUint32-16              	    8984	        42.01 ns/op
+BenchmarkAddUint32-16              	    8799	        38.69 ns/op
+BenchmarkAddUint32-16              	    8821	        41.43 ns/op
+BenchmarkAddUint32-16              	    9543	        37.07 ns/op
+BenchmarkAddUint32-16              	    8745	        40.30 ns/op
+BenchmarkAddUint32-16              	    9211	        40.71 ns/op
+BenchmarkSafeAddUint32
+BenchmarkSafeAddUint32-16          	    8168	        46.50 ns/op
+BenchmarkSafeAddUint32-16          	    7932	        44.41 ns/op
+BenchmarkSafeAddUint32-16          	    8436	        42.37 ns/op
+BenchmarkSafeAddUint32-16          	    8203	        42.84 ns/op
+BenchmarkSafeAddUint32-16          	    8349	        42.74 ns/op
+BenchmarkSafeAddUint32-16          	    7629	        82.62 ns/op
+BenchmarkSafeAddUint32-16          	    8462	        41.60 ns/op
+BenchmarkSafeAddUint32-16          	    8724	        45.30 ns/op
+BenchmarkSafeAddUint32-16          	    7964	        41.86 ns/op
+BenchmarkSafeAddUint32-16          	    8326	        44.34 ns/op
+BenchmarkAddInt32
+BenchmarkAddInt32-16               	    9475	        38.42 ns/op
+BenchmarkAddInt32-16               	    8145	        38.54 ns/op
+BenchmarkAddInt32-16               	    9049	        41.31 ns/op
+BenchmarkAddInt32-16               	    9026	        41.87 ns/op
+BenchmarkAddInt32-16               	    7426	        42.51 ns/op
+BenchmarkAddInt32-16               	    9134	        37.61 ns/op
+BenchmarkAddInt32-16               	    8336	        41.30 ns/op
+BenchmarkAddInt32-16               	    7842	        49.33 ns/op
+BenchmarkAddInt32-16               	    8941	        41.00 ns/op
+BenchmarkAddInt32-16               	    9333	        41.49 ns/op
+BenchmarkSafeAddInt32
+BenchmarkSafeAddInt32-16           	    7788	        46.83 ns/op
+BenchmarkSafeAddInt32-16           	    7658	        48.43 ns/op
+BenchmarkSafeAddInt32-16           	    7497	        46.08 ns/op
+BenchmarkSafeAddInt32-16           	    7860	        46.26 ns/op
+BenchmarkSafeAddInt32-16           	    7543	        49.30 ns/op
+BenchmarkSafeAddInt32-16           	    7819	        47.71 ns/op
+BenchmarkSafeAddInt32-16           	    7531	        45.69 ns/op
+BenchmarkSafeAddInt32-16           	    7299	        47.53 ns/op
+BenchmarkSafeAddInt32-16           	    7176	        56.19 ns/op
+BenchmarkSafeAddInt32-16           	    7820	        48.66 ns/op
+BenchmarkAddFloat32
+BenchmarkAddFloat32-16             	    9308	        57.63 ns/op
+BenchmarkAddFloat32-16             	    9435	        54.93 ns/op
+BenchmarkAddFloat32-16             	    6978	        52.75 ns/op
+BenchmarkAddFloat32-16             	    6769	        56.48 ns/op
+BenchmarkAddFloat32-16             	    6771	        52.67 ns/op
+BenchmarkAddFloat32-16             	    6334	        57.93 ns/op
+BenchmarkAddFloat32-16             	    6175	        53.11 ns/op
+BenchmarkAddFloat32-16             	    5374	        56.07 ns/op
+BenchmarkAddFloat32-16             	    7100	        58.40 ns/op
+BenchmarkAddFloat32-16             	    5748	        90.88 ns/op
+BenchmarkSafeAddFloat32
+BenchmarkSafeAddFloat32-16         	    6536	        60.14 ns/op
+BenchmarkSafeAddFloat32-16         	    5629	        55.35 ns/op
+BenchmarkSafeAddFloat32-16         	    6475	        55.25 ns/op
+BenchmarkSafeAddFloat32-16         	    6646	        64.14 ns/op
+BenchmarkSafeAddFloat32-16         	    6051	        54.38 ns/op
+BenchmarkSafeAddFloat32-16         	    6543	        55.30 ns/op
+BenchmarkSafeAddFloat32-16         	    6579	        53.39 ns/op
+BenchmarkSafeAddFloat32-16         	    6195	        66.14 ns/op
+BenchmarkSafeAddFloat32-16         	    6208	        63.12 ns/op
+BenchmarkSafeAddFloat32-16         	    6013	        56.29 ns/op
+BenchmarkAddUint64
+BenchmarkAddUint64-16              	    4416	        93.61 ns/op
+BenchmarkAddUint64-16              	    8877	        38.19 ns/op
+BenchmarkAddUint64-16              	    8810	        38.38 ns/op
+BenchmarkAddUint64-16              	    9775	        37.20 ns/op
+BenchmarkAddUint64-16              	    9232	        40.28 ns/op
+BenchmarkAddUint64-16              	    9111	        37.21 ns/op
+BenchmarkAddUint64-16              	    9445	        41.09 ns/op
+BenchmarkAddUint64-16              	    9267	        39.83 ns/op
+BenchmarkAddUint64-16              	    8982	        38.62 ns/op
+BenchmarkAddUint64-16              	    9596	        44.06 ns/op
+BenchmarkSafeAddUint64
+BenchmarkSafeAddUint64-16          	    6961	        45.52 ns/op
+BenchmarkSafeAddUint64-16          	    8145	        47.01 ns/op
+BenchmarkSafeAddUint64-16          	    7705	        55.36 ns/op
+BenchmarkSafeAddUint64-16          	    7954	        43.92 ns/op
+BenchmarkSafeAddUint64-16          	    7836	        43.02 ns/op
+BenchmarkSafeAddUint64-16          	    7868	        48.80 ns/op
+BenchmarkSafeAddUint64-16          	    7371	        48.15 ns/op
+BenchmarkSafeAddUint64-16          	    8022	        50.60 ns/op
+BenchmarkSafeAddUint64-16          	    7954	        45.13 ns/op
+BenchmarkSafeAddUint64-16          	    6991	        43.51 ns/op
+BenchmarkAddInt64
+BenchmarkAddInt64-16               	    9410	        39.32 ns/op
+BenchmarkAddInt64-16               	    9630	        37.65 ns/op
+BenchmarkAddInt64-16               	    9021	        42.30 ns/op
+BenchmarkAddInt64-16               	    9338	        40.19 ns/op
+BenchmarkAddInt64-16               	    8956	        39.80 ns/op
+BenchmarkAddInt64-16               	    8439	       119.2 ns/op
+BenchmarkAddInt64-16               	    8653	        39.45 ns/op
+BenchmarkAddInt64-16               	    9338	        57.61 ns/op
+BenchmarkAddInt64-16               	    7977	        46.83 ns/op
+BenchmarkAddInt64-16               	    9573	        55.58 ns/op
+BenchmarkSafeAddInt64
+BenchmarkSafeAddInt64-16           	    6403	        47.60 ns/op
+BenchmarkSafeAddInt64-16           	    8076	        45.17 ns/op
+BenchmarkSafeAddInt64-16           	    6840	        46.48 ns/op
+BenchmarkSafeAddInt64-16           	    7719	        45.43 ns/op
+BenchmarkSafeAddInt64-16           	    6714	        48.29 ns/op
+BenchmarkSafeAddInt64-16           	    7113	        45.60 ns/op
+BenchmarkSafeAddInt64-16           	    7746	        44.56 ns/op
+BenchmarkSafeAddInt64-16           	    7982	        45.05 ns/op
+BenchmarkSafeAddInt64-16           	    6606	        46.29 ns/op
+BenchmarkSafeAddInt64-16           	    7628	        46.27 ns/op
+BenchmarkAddFloat64
+BenchmarkAddFloat64-16             	    9630	        45.13 ns/op
+BenchmarkAddFloat64-16             	    9650	        37.70 ns/op
+BenchmarkAddFloat64-16             	    8954	        39.26 ns/op
+BenchmarkAddFloat64-16             	    8912	        70.12 ns/op
+BenchmarkAddFloat64-16             	    8896	        40.99 ns/op
+BenchmarkAddFloat64-16             	    9458	        38.33 ns/op
+BenchmarkAddFloat64-16             	    8949	        39.83 ns/op
+BenchmarkAddFloat64-16             	    9607	        40.50 ns/op
+BenchmarkAddFloat64-16             	    8892	        41.45 ns/op
+BenchmarkAddFloat64-16             	    9612	        36.91 ns/op
+BenchmarkSafeAddFloat64
+BenchmarkSafeAddFloat64-16         	    7537	        51.27 ns/op
+BenchmarkSafeAddFloat64-16         	    8029	        44.15 ns/op
+BenchmarkSafeAddFloat64-16         	    7245	        47.04 ns/op
+BenchmarkSafeAddFloat64-16         	    7832	        49.28 ns/op
+BenchmarkSafeAddFloat64-16         	    8239	        45.13 ns/op
+BenchmarkSafeAddFloat64-16         	    6895	        49.12 ns/op
+BenchmarkSafeAddFloat64-16         	    7947	        46.76 ns/op
+BenchmarkSafeAddFloat64-16         	    7360	        45.34 ns/op
+BenchmarkSafeAddFloat64-16         	    8599	        43.12 ns/op
+BenchmarkSafeAddFloat64-16         	    7688	        44.28 ns/op
+BenchmarkDivideUint8
+BenchmarkDivideUint8-16            	    9704	        38.15 ns/op
+BenchmarkDivideUint8-16            	    9703	        40.97 ns/op
+BenchmarkDivideUint8-16            	    9876	        38.80 ns/op
+BenchmarkDivideUint8-16            	    9458	        38.23 ns/op
+BenchmarkDivideUint8-16            	    8610	        38.46 ns/op
+BenchmarkDivideUint8-16            	    9480	        40.49 ns/op
+BenchmarkDivideUint8-16            	    8082	        40.36 ns/op
+BenchmarkDivideUint8-16            	    8262	        36.59 ns/op
+BenchmarkDivideUint8-16            	    9261	        37.77 ns/op
+BenchmarkDivideUint8-16            	    9379	        38.97 ns/op
+BenchmarkSafeDivideUint8
+BenchmarkSafeDivideUint8-16        	    7932	        47.67 ns/op
+BenchmarkSafeDivideUint8-16        	    7590	        51.41 ns/op
+BenchmarkSafeDivideUint8-16        	    8185	        42.82 ns/op
+BenchmarkSafeDivideUint8-16        	    7252	        44.94 ns/op
+BenchmarkSafeDivideUint8-16        	    7581	        50.62 ns/op
+BenchmarkSafeDivideUint8-16        	    8166	        46.12 ns/op
+BenchmarkSafeDivideUint8-16        	    8300	        47.25 ns/op
+BenchmarkSafeDivideUint8-16        	    7377	        47.23 ns/op
+BenchmarkSafeDivideUint8-16        	    6805	        48.93 ns/op
+BenchmarkSafeDivideUint8-16        	    8601	        48.24 ns/op
+BenchmarkDivideInt8
+BenchmarkDivideInt8-16             	    9289	        38.45 ns/op
+BenchmarkDivideInt8-16             	    9742	        38.64 ns/op
+BenchmarkDivideInt8-16             	    8031	        45.01 ns/op
+BenchmarkDivideInt8-16             	    9448	        48.93 ns/op
+BenchmarkDivideInt8-16             	    8626	        42.03 ns/op
+BenchmarkDivideInt8-16             	    8899	        41.32 ns/op
+BenchmarkDivideInt8-16             	    8358	        41.50 ns/op
+BenchmarkDivideInt8-16             	    8534	        41.16 ns/op
+BenchmarkDivideInt8-16             	    8558	        41.47 ns/op
+BenchmarkDivideInt8-16             	    8742	        44.14 ns/op
+BenchmarkSafeDivideInt8
+BenchmarkSafeDivideInt8-16         	    6967	        46.35 ns/op
+BenchmarkSafeDivideInt8-16         	    8179	        46.51 ns/op
+BenchmarkSafeDivideInt8-16         	    6676	        65.58 ns/op
+BenchmarkSafeDivideInt8-16         	    7942	        45.44 ns/op
+BenchmarkSafeDivideInt8-16         	    7628	        46.41 ns/op
+BenchmarkSafeDivideInt8-16         	    8142	        62.83 ns/op
+BenchmarkSafeDivideInt8-16         	    6423	        56.76 ns/op
+BenchmarkSafeDivideInt8-16         	    7442	        48.60 ns/op
+BenchmarkSafeDivideInt8-16         	    8220	        46.99 ns/op
+BenchmarkSafeDivideInt8-16         	    6951	        47.46 ns/op
+BenchmarkDivideUint16
+BenchmarkDivideUint16-16           	    8386	        41.61 ns/op
+BenchmarkDivideUint16-16           	    8742	        41.36 ns/op
+BenchmarkDivideUint16-16           	    8619	        41.53 ns/op
+BenchmarkDivideUint16-16           	    7825	        42.70 ns/op
+BenchmarkDivideUint16-16           	    7156	        43.13 ns/op
+BenchmarkDivideUint16-16           	    7624	        43.31 ns/op
+BenchmarkDivideUint16-16           	    8396	        42.52 ns/op
+BenchmarkDivideUint16-16           	    8251	        49.57 ns/op
+BenchmarkDivideUint16-16           	    8794	        41.70 ns/op
+BenchmarkDivideUint16-16           	    8158	        52.71 ns/op
+BenchmarkSafeDivideUint16
+BenchmarkSafeDivideUint16-16       	    8014	        47.64 ns/op
+BenchmarkSafeDivideUint16-16       	    8684	        55.37 ns/op
+BenchmarkSafeDivideUint16-16       	    7830	        59.34 ns/op
+BenchmarkSafeDivideUint16-16       	    8298	        46.75 ns/op
+BenchmarkSafeDivideUint16-16       	    8361	        64.94 ns/op
+BenchmarkSafeDivideUint16-16       	    8388	        44.32 ns/op
+BenchmarkSafeDivideUint16-16       	    8148	        46.59 ns/op
+BenchmarkSafeDivideUint16-16       	    8179	        44.18 ns/op
+BenchmarkSafeDivideUint16-16       	    8414	        45.41 ns/op
+BenchmarkSafeDivideUint16-16       	    7810	        78.65 ns/op
+BenchmarkDivideInt16
+BenchmarkDivideInt16-16            	    9355	        45.77 ns/op
+BenchmarkDivideInt16-16            	    8632	        38.64 ns/op
+BenchmarkDivideInt16-16            	    8466	        45.16 ns/op
+BenchmarkDivideInt16-16            	    8653	        43.03 ns/op
+BenchmarkDivideInt16-16            	    7425	        42.03 ns/op
+BenchmarkDivideInt16-16            	    9384	        38.88 ns/op
+BenchmarkDivideInt16-16            	    8144	        42.46 ns/op
+BenchmarkDivideInt16-16            	    9187	        43.33 ns/op
+BenchmarkDivideInt16-16            	    8742	        47.73 ns/op
+BenchmarkDivideInt16-16            	    9129	        46.81 ns/op
+BenchmarkSafeDivideInt16
+BenchmarkSafeDivideInt16-16        	    7189	        48.89 ns/op
+BenchmarkSafeDivideInt16-16        	    6637	        47.73 ns/op
+BenchmarkSafeDivideInt16-16        	    7675	        51.96 ns/op
+BenchmarkSafeDivideInt16-16        	    7638	        45.19 ns/op
+BenchmarkSafeDivideInt16-16        	    7830	        51.82 ns/op
+BenchmarkSafeDivideInt16-16        	    7951	        44.39 ns/op
+BenchmarkSafeDivideInt16-16        	    6969	        46.37 ns/op
+BenchmarkSafeDivideInt16-16        	    8168	        44.85 ns/op
+BenchmarkSafeDivideInt16-16        	    7425	        45.15 ns/op
+BenchmarkSafeDivideInt16-16        	    7317	        44.69 ns/op
+BenchmarkDivideUint32
+BenchmarkDivideUint32-16           	    8872	        37.20 ns/op
+BenchmarkDivideUint32-16           	    7761	        44.21 ns/op
+BenchmarkDivideUint32-16           	    9056	        37.74 ns/op
+BenchmarkDivideUint32-16           	    8799	        38.19 ns/op
+BenchmarkDivideUint32-16           	    8310	        40.74 ns/op
+BenchmarkDivideUint32-16           	    8418	        40.39 ns/op
+BenchmarkDivideUint32-16           	    9026	        40.24 ns/op
+BenchmarkDivideUint32-16           	    9360	        39.10 ns/op
+BenchmarkDivideUint32-16           	    8505	        39.81 ns/op
+BenchmarkDivideUint32-16           	    9862	        38.21 ns/op
+BenchmarkSafeDivideUint32
+BenchmarkSafeDivideUint32-16       	    8352	        48.74 ns/op
+BenchmarkSafeDivideUint32-16       	    7269	        42.09 ns/op
+BenchmarkSafeDivideUint32-16       	    8181	        47.07 ns/op
+BenchmarkSafeDivideUint32-16       	    8336	        47.49 ns/op
+BenchmarkSafeDivideUint32-16       	    8306	        41.98 ns/op
+BenchmarkSafeDivideUint32-16       	    8587	        48.42 ns/op
+BenchmarkSafeDivideUint32-16       	    7442	        44.74 ns/op
+BenchmarkSafeDivideUint32-16       	    8407	        45.52 ns/op
+BenchmarkSafeDivideUint32-16       	    8846	        45.43 ns/op
+BenchmarkSafeDivideUint32-16       	    8516	        44.89 ns/op
+BenchmarkDivideInt32
+BenchmarkDivideInt32-16            	    9381	        37.93 ns/op
+BenchmarkDivideInt32-16            	    9367	        38.69 ns/op
+BenchmarkDivideInt32-16            	    8649	        40.22 ns/op
+BenchmarkDivideInt32-16            	    9384	        40.64 ns/op
+BenchmarkDivideInt32-16            	    9003	        40.94 ns/op
+BenchmarkDivideInt32-16            	    9306	        41.58 ns/op
+BenchmarkDivideInt32-16            	    7999	        43.53 ns/op
+BenchmarkDivideInt32-16            	    8628	        41.28 ns/op
+BenchmarkDivideInt32-16            	    8474	        42.97 ns/op
+BenchmarkDivideInt32-16            	    9708	        38.37 ns/op
+BenchmarkSafeDivideInt32
+BenchmarkSafeDivideInt32-16        	    6122	        54.69 ns/op
+BenchmarkSafeDivideInt32-16        	    6114	        52.64 ns/op
+BenchmarkSafeDivideInt32-16        	    6910	       103.6 ns/op
+BenchmarkSafeDivideInt32-16        	    7804	        48.27 ns/op
+BenchmarkSafeDivideInt32-16        	    6679	        47.75 ns/op
+BenchmarkSafeDivideInt32-16        	    7546	        54.74 ns/op
+BenchmarkSafeDivideInt32-16        	    6118	        51.93 ns/op
+BenchmarkSafeDivideInt32-16        	    7419	        52.02 ns/op
+BenchmarkSafeDivideInt32-16        	    6838	        49.78 ns/op
+BenchmarkSafeDivideInt32-16        	    6776	        48.30 ns/op
+BenchmarkDivideFloat32
+BenchmarkDivideFloat32-16          	    9873	        36.49 ns/op
+BenchmarkDivideFloat32-16          	    9919	        36.23 ns/op
+BenchmarkDivideFloat32-16          	    9109	        37.90 ns/op
+BenchmarkDivideFloat32-16          	    9352	        36.90 ns/op
+BenchmarkDivideFloat32-16          	    9830	        40.48 ns/op
+BenchmarkDivideFloat32-16          	    9903	        43.28 ns/op
+BenchmarkDivideFloat32-16          	    9806	        37.99 ns/op
+BenchmarkDivideFloat32-16          	    9729	        37.49 ns/op
+BenchmarkDivideFloat32-16          	    9194	        36.68 ns/op
+BenchmarkDivideFloat32-16          	   10000	        36.82 ns/op
+BenchmarkSafeDivideFloat32
+BenchmarkSafeDivideFloat32-16      	    8084	        49.86 ns/op
+BenchmarkSafeDivideFloat32-16      	    7102	        46.71 ns/op
+BenchmarkSafeDivideFloat32-16      	    7828	        48.01 ns/op
+BenchmarkSafeDivideFloat32-16      	    7502	        42.32 ns/op
+BenchmarkSafeDivideFloat32-16      	    5412	        66.06 ns/op
+BenchmarkSafeDivideFloat32-16      	    7743	        49.67 ns/op
+BenchmarkSafeDivideFloat32-16      	    5953	        81.20 ns/op
+BenchmarkSafeDivideFloat32-16      	    7125	        52.60 ns/op
+BenchmarkSafeDivideFloat32-16      	    6920	        56.45 ns/op
+BenchmarkSafeDivideFloat32-16      	    7716	        45.15 ns/op
+BenchmarkDivideUint64
+BenchmarkDivideUint64-16           	    8438	        42.28 ns/op
+BenchmarkDivideUint64-16           	    8442	        38.90 ns/op
+BenchmarkDivideUint64-16           	    8877	        44.26 ns/op
+BenchmarkDivideUint64-16           	    9216	        41.15 ns/op
+BenchmarkDivideUint64-16           	    8936	        40.06 ns/op
+BenchmarkDivideUint64-16           	    9444	        40.65 ns/op
+BenchmarkDivideUint64-16           	    8530	        44.56 ns/op
+BenchmarkDivideUint64-16           	    9507	        42.45 ns/op
+BenchmarkDivideUint64-16           	    7750	        39.58 ns/op
+BenchmarkDivideUint64-16           	    9423	        39.84 ns/op
+BenchmarkSafeDivideUint64
+BenchmarkSafeDivideUint64-16       	    7932	        52.36 ns/op
+BenchmarkSafeDivideUint64-16       	    6210	        53.85 ns/op
+BenchmarkSafeDivideUint64-16       	    7604	        48.85 ns/op
+BenchmarkSafeDivideUint64-16       	    6085	        55.18 ns/op
+BenchmarkSafeDivideUint64-16       	    6582	        84.45 ns/op
+BenchmarkSafeDivideUint64-16       	    7561	        47.26 ns/op
+BenchmarkSafeDivideUint64-16       	    6946	        51.92 ns/op
+BenchmarkSafeDivideUint64-16       	    7759	        47.64 ns/op
+BenchmarkSafeDivideUint64-16       	    6782	        50.43 ns/op
+BenchmarkSafeDivideUint64-16       	    6554	        46.41 ns/op
+BenchmarkDivideInt64
+BenchmarkDivideInt64-16            	    9315	        38.23 ns/op
+BenchmarkDivideInt64-16            	    9169	        38.30 ns/op
+BenchmarkDivideInt64-16            	    9049	        37.88 ns/op
+BenchmarkDivideInt64-16            	    8258	        39.64 ns/op
+BenchmarkDivideInt64-16            	    9147	        40.02 ns/op
+BenchmarkDivideInt64-16            	    9528	        36.93 ns/op
+BenchmarkDivideInt64-16            	    9284	        42.24 ns/op
+BenchmarkDivideInt64-16            	    9734	        38.27 ns/op
+BenchmarkDivideInt64-16            	    9490	        37.33 ns/op
+BenchmarkDivideInt64-16            	    9584	        37.82 ns/op
+BenchmarkSafeDivideInt64
+BenchmarkSafeDivideInt64-16        	    7941	        45.99 ns/op
+BenchmarkSafeDivideInt64-16        	    6828	        44.92 ns/op
+BenchmarkSafeDivideInt64-16        	    7860	        42.12 ns/op
+BenchmarkSafeDivideInt64-16        	    8462	        43.56 ns/op
+BenchmarkSafeDivideInt64-16        	    8076	        41.90 ns/op
+BenchmarkSafeDivideInt64-16        	    6897	        44.74 ns/op
+BenchmarkSafeDivideInt64-16        	    7464	        47.64 ns/op
+BenchmarkSafeDivideInt64-16        	    7455	        42.72 ns/op
+BenchmarkSafeDivideInt64-16        	    8450	        50.40 ns/op
+BenchmarkSafeDivideInt64-16        	    7873	        47.12 ns/op
+BenchmarkDivideFloat64
+BenchmarkDivideFloat64-16          	   10039	        35.78 ns/op
+BenchmarkDivideFloat64-16          	    8722	        41.51 ns/op
+BenchmarkDivideFloat64-16          	    9564	        44.94 ns/op
+BenchmarkDivideFloat64-16          	    9458	        36.23 ns/op
+BenchmarkDivideFloat64-16          	   10000	        37.63 ns/op
+BenchmarkDivideFloat64-16          	   10000	        49.21 ns/op
+BenchmarkDivideFloat64-16          	    9861	        37.75 ns/op
+BenchmarkDivideFloat64-16          	    9687	        36.77 ns/op
+BenchmarkDivideFloat64-16          	    9372	        44.37 ns/op
+BenchmarkDivideFloat64-16          	    9625	        38.38 ns/op
+BenchmarkSafeDivideFloat64
+BenchmarkSafeDivideFloat64-16      	    7377	        53.31 ns/op
+BenchmarkSafeDivideFloat64-16      	    7288	        48.44 ns/op
+BenchmarkSafeDivideFloat64-16      	    6536	        50.89 ns/op
+BenchmarkSafeDivideFloat64-16      	    6949	        48.31 ns/op
+BenchmarkSafeDivideFloat64-16      	    7676	        49.11 ns/op
+BenchmarkSafeDivideFloat64-16      	    7154	        47.81 ns/op
+BenchmarkSafeDivideFloat64-16      	    7840	        48.74 ns/op
+BenchmarkSafeDivideFloat64-16      	    7884	        56.21 ns/op
+BenchmarkSafeDivideFloat64-16      	    7758	        49.01 ns/op
+BenchmarkSafeDivideFloat64-16      	    7784	        51.56 ns/op
+BenchmarkMultiplyUint8
+BenchmarkMultiplyUint8-16          	    8824	        41.16 ns/op
+BenchmarkMultiplyUint8-16          	    8877	        38.27 ns/op
+BenchmarkMultiplyUint8-16          	    8810	        40.83 ns/op
+BenchmarkMultiplyUint8-16          	    9363	        39.96 ns/op
+BenchmarkMultiplyUint8-16          	    9039	        40.13 ns/op
+BenchmarkMultiplyUint8-16          	    9308	        40.12 ns/op
+BenchmarkMultiplyUint8-16          	    8644	        38.26 ns/op
+BenchmarkMultiplyUint8-16          	    9582	        40.49 ns/op
+BenchmarkMultiplyUint8-16          	    8914	        37.83 ns/op
+BenchmarkMultiplyUint8-16          	    8391	        39.27 ns/op
+BenchmarkSafeMultiplyUint8
+BenchmarkSafeMultiplyUint8-16      	    5842	        56.36 ns/op
+BenchmarkSafeMultiplyUint8-16      	    6974	        48.16 ns/op
+BenchmarkSafeMultiplyUint8-16      	    7737	        51.71 ns/op
+BenchmarkSafeMultiplyUint8-16      	    7296	        53.96 ns/op
+BenchmarkSafeMultiplyUint8-16      	    7567	        52.83 ns/op
+BenchmarkSafeMultiplyUint8-16      	    6992	        53.67 ns/op
+BenchmarkSafeMultiplyUint8-16      	    7395	        55.05 ns/op
+BenchmarkSafeMultiplyUint8-16      	    5887	        54.05 ns/op
+BenchmarkSafeMultiplyUint8-16      	    7167	        49.68 ns/op
+BenchmarkSafeMultiplyUint8-16      	    7470	        53.31 ns/op
+BenchmarkMultiplyInt8
+BenchmarkMultiplyInt8-16           	    9472	        43.94 ns/op
+BenchmarkMultiplyInt8-16           	    8222	        37.65 ns/op
+BenchmarkMultiplyInt8-16           	    9183	        39.14 ns/op
+BenchmarkMultiplyInt8-16           	    9669	        39.11 ns/op
+BenchmarkMultiplyInt8-16           	    8917	        39.07 ns/op
+BenchmarkMultiplyInt8-16           	    8468	        40.07 ns/op
+BenchmarkMultiplyInt8-16           	    8841	        41.16 ns/op
+BenchmarkMultiplyInt8-16           	    9237	       108.2 ns/op
+BenchmarkMultiplyInt8-16           	    8593	        40.38 ns/op
+BenchmarkMultiplyInt8-16           	    9513	        44.95 ns/op
+BenchmarkSafeMultiplyInt8
+BenchmarkSafeMultiplyInt8-16       	    5857	        51.61 ns/op
+BenchmarkSafeMultiplyInt8-16       	    6037	        58.65 ns/op
+BenchmarkSafeMultiplyInt8-16       	    6698	        54.28 ns/op
+BenchmarkSafeMultiplyInt8-16       	    6508	        53.95 ns/op
+BenchmarkSafeMultiplyInt8-16       	    6882	        53.96 ns/op
+BenchmarkSafeMultiplyInt8-16       	    6120	        56.48 ns/op
+BenchmarkSafeMultiplyInt8-16       	    6325	        57.71 ns/op
+BenchmarkSafeMultiplyInt8-16       	    6230	        51.96 ns/op
+BenchmarkSafeMultiplyInt8-16       	    5902	        78.98 ns/op
+BenchmarkSafeMultiplyInt8-16       	    6546	        57.81 ns/op
+BenchmarkMultiplyUint16
+BenchmarkMultiplyUint16-16         	    7519	        41.51 ns/op
+BenchmarkMultiplyUint16-16         	    8853	        39.08 ns/op
+BenchmarkMultiplyUint16-16         	    8432	        43.04 ns/op
+BenchmarkMultiplyUint16-16         	    8305	        39.73 ns/op
+BenchmarkMultiplyUint16-16         	    8896	        39.07 ns/op
+BenchmarkMultiplyUint16-16         	    9189	        41.73 ns/op
+BenchmarkMultiplyUint16-16         	    8472	        45.31 ns/op
+BenchmarkMultiplyUint16-16         	    8481	        38.83 ns/op
+BenchmarkMultiplyUint16-16         	    8800	        41.25 ns/op
+BenchmarkMultiplyUint16-16         	    8786	        42.37 ns/op
+BenchmarkSafeMultiplyUint16
+BenchmarkSafeMultiplyUint16-16     	    6456	        53.69 ns/op
+BenchmarkSafeMultiplyUint16-16     	    7659	        54.72 ns/op
+BenchmarkSafeMultiplyUint16-16     	    7629	        48.60 ns/op
+BenchmarkSafeMultiplyUint16-16     	    7869	        65.78 ns/op
+BenchmarkSafeMultiplyUint16-16     	    7273	        57.06 ns/op
+BenchmarkSafeMultiplyUint16-16     	    6182	        51.93 ns/op
+BenchmarkSafeMultiplyUint16-16     	    7101	        48.98 ns/op
+BenchmarkSafeMultiplyUint16-16     	    7540	        57.71 ns/op
+BenchmarkSafeMultiplyUint16-16     	    7302	        55.93 ns/op
+BenchmarkSafeMultiplyUint16-16     	    7201	        45.77 ns/op
+BenchmarkMultiplyInt16
+BenchmarkMultiplyInt16-16          	    9870	        39.44 ns/op
+BenchmarkMultiplyInt16-16          	    8637	        37.20 ns/op
+BenchmarkMultiplyInt16-16          	    9403	        39.69 ns/op
+BenchmarkMultiplyInt16-16          	    7665	        47.38 ns/op
+BenchmarkMultiplyInt16-16          	    8808	        58.26 ns/op
+BenchmarkMultiplyInt16-16          	    9690	        40.68 ns/op
+BenchmarkMultiplyInt16-16          	    9576	        39.45 ns/op
+BenchmarkMultiplyInt16-16          	    9480	        41.02 ns/op
+BenchmarkMultiplyInt16-16          	    9232	        40.62 ns/op
+BenchmarkMultiplyInt16-16          	    8480	        38.33 ns/op
+BenchmarkSafeMultiplyInt16
+BenchmarkSafeMultiplyInt16-16      	    7215	        55.23 ns/op
+BenchmarkSafeMultiplyInt16-16      	    7003	        51.00 ns/op
+BenchmarkSafeMultiplyInt16-16      	    7016	        53.12 ns/op
+BenchmarkSafeMultiplyInt16-16      	    6928	        51.51 ns/op
+BenchmarkSafeMultiplyInt16-16      	    5954	        62.19 ns/op
+BenchmarkSafeMultiplyInt16-16      	    5636	        53.92 ns/op
+BenchmarkSafeMultiplyInt16-16      	    6374	        58.26 ns/op
+BenchmarkSafeMultiplyInt16-16      	    7130	        54.10 ns/op
+BenchmarkSafeMultiplyInt16-16      	    6962	        55.75 ns/op
+BenchmarkSafeMultiplyInt16-16      	    6699	        56.43 ns/op
+BenchmarkMultiplyUint32
+BenchmarkMultiplyUint32-16         	    9615	        36.56 ns/op
+BenchmarkMultiplyUint32-16         	    9229	        45.75 ns/op
+BenchmarkMultiplyUint32-16         	    9058	        38.62 ns/op
+BenchmarkMultiplyUint32-16         	    8466	        38.07 ns/op
+BenchmarkMultiplyUint32-16         	    9240	        40.54 ns/op
+BenchmarkMultiplyUint32-16         	    9235	        37.22 ns/op
+BenchmarkMultiplyUint32-16         	    9013	        38.39 ns/op
+BenchmarkMultiplyUint32-16         	    8277	        39.03 ns/op
+BenchmarkMultiplyUint32-16         	    9249	        39.21 ns/op
+BenchmarkMultiplyUint32-16         	    8965	        41.05 ns/op
+BenchmarkSafeMultiplyUint32
+BenchmarkSafeMultiplyUint32-16     	    5980	        52.86 ns/op
+BenchmarkSafeMultiplyUint32-16     	    6645	        56.62 ns/op
+BenchmarkSafeMultiplyUint32-16     	    6700	        48.85 ns/op
+BenchmarkSafeMultiplyUint32-16     	    7150	        51.03 ns/op
+BenchmarkSafeMultiplyUint32-16     	    3842	        96.20 ns/op
+BenchmarkSafeMultiplyUint32-16     	    6410	        50.05 ns/op
+BenchmarkSafeMultiplyUint32-16     	    7149	        51.92 ns/op
+BenchmarkSafeMultiplyUint32-16     	    7642	        47.30 ns/op
+BenchmarkSafeMultiplyUint32-16     	    7483	        52.79 ns/op
+BenchmarkSafeMultiplyUint32-16     	    7364	        50.69 ns/op
+BenchmarkMultiplyInt32
+BenchmarkMultiplyInt32-16          	    9758	        38.05 ns/op
+BenchmarkMultiplyInt32-16          	    8673	        39.21 ns/op
+BenchmarkMultiplyInt32-16          	    9008	        39.10 ns/op
+BenchmarkMultiplyInt32-16          	    8758	        38.76 ns/op
+BenchmarkMultiplyInt32-16          	    9152	        46.54 ns/op
+BenchmarkMultiplyInt32-16          	    8317	        37.73 ns/op
+BenchmarkMultiplyInt32-16          	    8797	        41.32 ns/op
+BenchmarkMultiplyInt32-16          	    9705	        39.53 ns/op
+BenchmarkMultiplyInt32-16          	    9039	        39.21 ns/op
+BenchmarkMultiplyInt32-16          	    9538	        37.24 ns/op
+BenchmarkSafeMultiplyInt32
+BenchmarkSafeMultiplyInt32-16      	    6049	        51.27 ns/op
+BenchmarkSafeMultiplyInt32-16      	    6673	        56.92 ns/op
+BenchmarkSafeMultiplyInt32-16      	    6512	        54.43 ns/op
+BenchmarkSafeMultiplyInt32-16      	    5702	        59.71 ns/op
+BenchmarkSafeMultiplyInt32-16      	    7075	        54.32 ns/op
+BenchmarkSafeMultiplyInt32-16      	    6489	        54.67 ns/op
+BenchmarkSafeMultiplyInt32-16      	    7461	        53.78 ns/op
+BenchmarkSafeMultiplyInt32-16      	    5761	        53.24 ns/op
+BenchmarkSafeMultiplyInt32-16      	    6490	        54.00 ns/op
+BenchmarkSafeMultiplyInt32-16      	    6424	        55.15 ns/op
+BenchmarkMultiplyFloat32
+BenchmarkMultiplyFloat32-16        	    9094	        38.15 ns/op
+BenchmarkMultiplyFloat32-16        	    9440	        41.54 ns/op
+BenchmarkMultiplyFloat32-16        	    7615	        56.87 ns/op
+BenchmarkMultiplyFloat32-16        	    9578	        39.71 ns/op
+BenchmarkMultiplyFloat32-16        	    9505	        41.72 ns/op
+BenchmarkMultiplyFloat32-16        	    9213	        40.99 ns/op
+BenchmarkMultiplyFloat32-16        	    9550	        40.46 ns/op
+BenchmarkMultiplyFloat32-16        	    9388	        39.44 ns/op
+BenchmarkMultiplyFloat32-16        	    9736	        52.13 ns/op
+BenchmarkMultiplyFloat32-16        	    8794	        40.15 ns/op
+BenchmarkSafeMultiplyFloat32
+BenchmarkSafeMultiplyFloat32-16    	    5853	        61.17 ns/op
+BenchmarkSafeMultiplyFloat32-16    	    5266	       114.6 ns/op
+BenchmarkSafeMultiplyFloat32-16    	    6014	        63.95 ns/op
+BenchmarkSafeMultiplyFloat32-16    	    5725	        58.20 ns/op
+BenchmarkSafeMultiplyFloat32-16    	    5121	        58.69 ns/op
+BenchmarkSafeMultiplyFloat32-16    	    5876	        55.47 ns/op
+BenchmarkSafeMultiplyFloat32-16    	    5214	        97.36 ns/op
+BenchmarkSafeMultiplyFloat32-16    	    7113	        65.07 ns/op
+BenchmarkSafeMultiplyFloat32-16    	    6555	        58.39 ns/op
+BenchmarkSafeMultiplyFloat32-16    	    5736	        59.00 ns/op
+BenchmarkMultiplyUint64
+BenchmarkMultiplyUint64-16         	    9386	        39.50 ns/op
+BenchmarkMultiplyUint64-16         	    9532	        37.25 ns/op
+BenchmarkMultiplyUint64-16         	    8982	        39.37 ns/op
+BenchmarkMultiplyUint64-16         	    9760	        43.39 ns/op
+BenchmarkMultiplyUint64-16         	    8613	        41.48 ns/op
+BenchmarkMultiplyUint64-16         	    8149	        36.82 ns/op
+BenchmarkMultiplyUint64-16         	    9252	        37.71 ns/op
+BenchmarkMultiplyUint64-16         	    9291	        38.88 ns/op
+BenchmarkMultiplyUint64-16         	    9612	        38.94 ns/op
+BenchmarkMultiplyUint64-16         	    9362	        41.10 ns/op
+BenchmarkSafeMultiplyUint64
+BenchmarkSafeMultiplyUint64-16     	    6993	        53.64 ns/op
+BenchmarkSafeMultiplyUint64-16     	    7600	        50.40 ns/op
+BenchmarkSafeMultiplyUint64-16     	    6436	        52.01 ns/op
+BenchmarkSafeMultiplyUint64-16     	    7694	        52.32 ns/op
+BenchmarkSafeMultiplyUint64-16     	    7395	        49.46 ns/op
+BenchmarkSafeMultiplyUint64-16     	    7440	        52.22 ns/op
+BenchmarkSafeMultiplyUint64-16     	    6933	        52.50 ns/op
+BenchmarkSafeMultiplyUint64-16     	    7182	        53.64 ns/op
+BenchmarkSafeMultiplyUint64-16     	    7243	        49.93 ns/op
+BenchmarkSafeMultiplyUint64-16     	    6652	        54.45 ns/op
+BenchmarkMultiplyInt64
+BenchmarkMultiplyInt64-16          	    7190	        44.30 ns/op
+BenchmarkMultiplyInt64-16          	    9438	        38.63 ns/op
+BenchmarkMultiplyInt64-16          	    7938	        40.59 ns/op
+BenchmarkMultiplyInt64-16          	    9213	        38.14 ns/op
+BenchmarkMultiplyInt64-16          	    9060	        39.91 ns/op
+BenchmarkMultiplyInt64-16          	    9277	        37.06 ns/op
+BenchmarkMultiplyInt64-16          	    8964	        66.36 ns/op
+BenchmarkMultiplyInt64-16          	    9186	        39.93 ns/op
+BenchmarkMultiplyInt64-16          	    8799	        39.75 ns/op
+BenchmarkMultiplyInt64-16          	    9183	        37.70 ns/op
+BenchmarkSafeMultiplyInt64
+BenchmarkSafeMultiplyInt64-16      	    7230	        49.45 ns/op
+BenchmarkSafeMultiplyInt64-16      	    7542	        57.69 ns/op
+BenchmarkSafeMultiplyInt64-16      	    6992	        48.47 ns/op
+BenchmarkSafeMultiplyInt64-16      	    7382	        47.09 ns/op
+BenchmarkSafeMultiplyInt64-16      	    7578	        48.72 ns/op
+BenchmarkSafeMultiplyInt64-16      	    7326	        51.46 ns/op
+BenchmarkSafeMultiplyInt64-16      	    6441	        48.03 ns/op
+BenchmarkSafeMultiplyInt64-16      	    7551	        48.40 ns/op
+BenchmarkSafeMultiplyInt64-16      	    7160	        49.50 ns/op
+BenchmarkSafeMultiplyInt64-16      	    7543	        52.79 ns/op
+BenchmarkMultiplyFloat64
+BenchmarkMultiplyFloat64-16        	    9594	        38.24 ns/op
+BenchmarkMultiplyFloat64-16        	    8442	        41.33 ns/op
+BenchmarkMultiplyFloat64-16        	    8835	        40.48 ns/op
+BenchmarkMultiplyFloat64-16        	    9632	        40.24 ns/op
+BenchmarkMultiplyFloat64-16        	    8698	        40.41 ns/op
+BenchmarkMultiplyFloat64-16        	    8628	        36.82 ns/op
+BenchmarkMultiplyFloat64-16        	    8936	        42.22 ns/op
+BenchmarkMultiplyFloat64-16        	    8618	        41.19 ns/op
+BenchmarkMultiplyFloat64-16        	    9000	        41.45 ns/op
+BenchmarkMultiplyFloat64-16        	    9117	        37.31 ns/op
+BenchmarkSafeMultiplyFloat64
+BenchmarkSafeMultiplyFloat64-16    	    6487	        99.82 ns/op
+BenchmarkSafeMultiplyFloat64-16    	    6826	        53.35 ns/op
+BenchmarkSafeMultiplyFloat64-16    	    6834	        53.81 ns/op
+BenchmarkSafeMultiplyFloat64-16    	    6988	        55.59 ns/op
+BenchmarkSafeMultiplyFloat64-16    	    6910	        69.63 ns/op
+BenchmarkSafeMultiplyFloat64-16    	    7075	        57.72 ns/op
+BenchmarkSafeMultiplyFloat64-16    	    7359	        50.73 ns/op
+BenchmarkSafeMultiplyFloat64-16    	    7116	        64.04 ns/op
+BenchmarkSafeMultiplyFloat64-16    	    6384	        56.09 ns/op
+BenchmarkSafeMultiplyFloat64-16    	    6050	        54.41 ns/op
+BenchmarkSubtractUint8
+BenchmarkSubtractUint8-16          	    8745	        38.47 ns/op
+BenchmarkSubtractUint8-16          	    8532	        38.94 ns/op
+BenchmarkSubtractUint8-16          	    8534	        40.29 ns/op
+BenchmarkSubtractUint8-16          	    9274	        38.53 ns/op
+BenchmarkSubtractUint8-16          	    9028	        38.48 ns/op
+BenchmarkSubtractUint8-16          	    9318	        39.40 ns/op
+BenchmarkSubtractUint8-16          	    8959	        39.91 ns/op
+BenchmarkSubtractUint8-16          	    9331	        45.55 ns/op
+BenchmarkSubtractUint8-16          	    9333	        39.38 ns/op
+BenchmarkSubtractUint8-16          	    8306	        38.48 ns/op
+BenchmarkSafeSubtractUint8
+BenchmarkSafeSubtractUint8-16      	    7585	        49.65 ns/op
+BenchmarkSafeSubtractUint8-16      	    7426	        45.36 ns/op
+BenchmarkSafeSubtractUint8-16      	    6922	        50.43 ns/op
+BenchmarkSafeSubtractUint8-16      	    6944	        47.03 ns/op
+BenchmarkSafeSubtractUint8-16      	    7201	        49.32 ns/op
+BenchmarkSafeSubtractUint8-16      	    7152	        47.41 ns/op
+BenchmarkSafeSubtractUint8-16      	    7561	        45.06 ns/op
+BenchmarkSafeSubtractUint8-16      	    6366	        49.58 ns/op
+BenchmarkSafeSubtractUint8-16      	    7788	        56.07 ns/op
+BenchmarkSafeSubtractUint8-16      	    7060	        47.52 ns/op
+BenchmarkSubtractInt8
+BenchmarkSubtractInt8-16           	    9507	        38.06 ns/op
+BenchmarkSubtractInt8-16           	    8116	        40.17 ns/op
+BenchmarkSubtractInt8-16           	    9240	        39.00 ns/op
+BenchmarkSubtractInt8-16           	    9374	        37.81 ns/op
+BenchmarkSubtractInt8-16           	    8784	        42.27 ns/op
+BenchmarkSubtractInt8-16           	    9692	        41.14 ns/op
+BenchmarkSubtractInt8-16           	    8472	        38.58 ns/op
+BenchmarkSubtractInt8-16           	    8888	        39.23 ns/op
+BenchmarkSubtractInt8-16           	    9386	        37.33 ns/op
+BenchmarkSubtractInt8-16           	    7756	        53.55 ns/op
+BenchmarkSafeSubtractInt8
+BenchmarkSafeSubtractInt8-16       	    7990	        43.33 ns/op
+BenchmarkSafeSubtractInt8-16       	    8451	        55.27 ns/op
+BenchmarkSafeSubtractInt8-16       	    8468	        43.58 ns/op
+BenchmarkSafeSubtractInt8-16       	    7614	        44.12 ns/op
+BenchmarkSafeSubtractInt8-16       	    8145	        45.17 ns/op
+BenchmarkSafeSubtractInt8-16       	    7696	        45.85 ns/op
+BenchmarkSafeSubtractInt8-16       	    7688	        46.60 ns/op
+BenchmarkSafeSubtractInt8-16       	    8442	        50.75 ns/op
+BenchmarkSafeSubtractInt8-16       	    7756	        56.27 ns/op
+BenchmarkSafeSubtractInt8-16       	    7316	        52.20 ns/op
+BenchmarkSubtractUint16
+BenchmarkSubtractUint16-16         	    8827	        48.16 ns/op
+BenchmarkSubtractUint16-16         	    9614	        39.66 ns/op
+BenchmarkSubtractUint16-16         	    9550	        38.94 ns/op
+BenchmarkSubtractUint16-16         	    9340	        40.74 ns/op
+BenchmarkSubtractUint16-16         	    8469	        40.36 ns/op
+BenchmarkSubtractUint16-16         	    9049	        38.72 ns/op
+BenchmarkSubtractUint16-16         	    9166	        39.06 ns/op
+BenchmarkSubtractUint16-16         	    8481	        38.44 ns/op
+BenchmarkSubtractUint16-16         	    9259	        40.93 ns/op
+BenchmarkSubtractUint16-16         	    9211	        39.59 ns/op
+BenchmarkSafeSubtractUint16
+BenchmarkSafeSubtractUint16-16     	    7740	        46.75 ns/op
+BenchmarkSafeSubtractUint16-16     	    7819	        47.49 ns/op
+BenchmarkSafeSubtractUint16-16     	    6536	        49.03 ns/op
+BenchmarkSafeSubtractUint16-16     	    7876	        50.56 ns/op
+BenchmarkSafeSubtractUint16-16     	    7566	        45.88 ns/op
+BenchmarkSafeSubtractUint16-16     	    6519	        47.84 ns/op
+BenchmarkSafeSubtractUint16-16     	    7531	        70.08 ns/op
+BenchmarkSafeSubtractUint16-16     	    7045	       136.6 ns/op
+BenchmarkSafeSubtractUint16-16     	    4440	       241.0 ns/op
+BenchmarkSafeSubtractUint16-16     	    7202	        50.29 ns/op
+BenchmarkSubtractInt16
+BenchmarkSubtractInt16-16          	    9502	        37.40 ns/op
+BenchmarkSubtractInt16-16          	    9716	        39.42 ns/op
+BenchmarkSubtractInt16-16          	    8716	        39.63 ns/op
+BenchmarkSubtractInt16-16          	    9376	        36.73 ns/op
+BenchmarkSubtractInt16-16          	    9266	        40.44 ns/op
+BenchmarkSubtractInt16-16          	    9433	        38.79 ns/op
+BenchmarkSubtractInt16-16          	    8910	        61.38 ns/op
+BenchmarkSubtractInt16-16          	    9306	        37.26 ns/op
+BenchmarkSubtractInt16-16          	    8626	        37.57 ns/op
+BenchmarkSubtractInt16-16          	    9591	        38.15 ns/op
+BenchmarkSafeSubtractInt16
+BenchmarkSafeSubtractInt16-16      	    7748	        43.84 ns/op
+BenchmarkSafeSubtractInt16-16      	    7600	        43.92 ns/op
+BenchmarkSafeSubtractInt16-16      	    8364	        45.29 ns/op
+BenchmarkSafeSubtractInt16-16      	    7981	        42.48 ns/op
+BenchmarkSafeSubtractInt16-16      	    8571	        47.13 ns/op
+BenchmarkSafeSubtractInt16-16      	    8022	        45.32 ns/op
+BenchmarkSafeSubtractInt16-16      	    7852	        47.47 ns/op
+BenchmarkSafeSubtractInt16-16      	    7305	        43.09 ns/op
+BenchmarkSafeSubtractInt16-16      	    8326	        43.33 ns/op
+BenchmarkSafeSubtractInt16-16      	    8498	        46.11 ns/op
+BenchmarkSubtractUint32
+BenchmarkSubtractUint32-16         	    9127	        39.05 ns/op
+BenchmarkSubtractUint32-16         	    8887	        37.10 ns/op
+BenchmarkSubtractUint32-16         	    8371	        40.39 ns/op
+BenchmarkSubtractUint32-16         	    8824	        38.49 ns/op
+BenchmarkSubtractUint32-16         	    7563	        40.10 ns/op
+BenchmarkSubtractUint32-16         	    8638	        38.10 ns/op
+BenchmarkSubtractUint32-16         	    8110	        40.55 ns/op
+BenchmarkSubtractUint32-16         	    8932	        39.86 ns/op
+BenchmarkSubtractUint32-16         	    8943	        40.48 ns/op
+BenchmarkSubtractUint32-16         	    9596	        38.00 ns/op
+BenchmarkSafeSubtractUint32
+BenchmarkSafeSubtractUint32-16     	    8316	        43.50 ns/op
+BenchmarkSafeSubtractUint32-16     	    8076	        49.57 ns/op
+BenchmarkSafeSubtractUint32-16     	    7946	        44.65 ns/op
+BenchmarkSafeSubtractUint32-16     	    8166	        46.34 ns/op
+BenchmarkSafeSubtractUint32-16     	    7942	        47.50 ns/op
+BenchmarkSafeSubtractUint32-16     	    8098	        44.24 ns/op
+BenchmarkSafeSubtractUint32-16     	    7878	        43.68 ns/op
+BenchmarkSafeSubtractUint32-16     	    8439	        45.68 ns/op
+BenchmarkSafeSubtractUint32-16     	    8078	        44.83 ns/op
+BenchmarkSafeSubtractUint32-16     	    8361	        45.13 ns/op
+BenchmarkSubtractInt32
+BenchmarkSubtractInt32-16          	    8016	        40.24 ns/op
+BenchmarkSubtractInt32-16          	    9286	        38.08 ns/op
+BenchmarkSubtractInt32-16          	    8954	        42.01 ns/op
+BenchmarkSubtractInt32-16          	    8058	        40.10 ns/op
+BenchmarkSubtractInt32-16          	    8528	        45.67 ns/op
+BenchmarkSubtractInt32-16          	    9067	        40.19 ns/op
+BenchmarkSubtractInt32-16          	    8786	        42.94 ns/op
+BenchmarkSubtractInt32-16          	    7016	        45.29 ns/op
+BenchmarkSubtractInt32-16          	    7934	        41.43 ns/op
+BenchmarkSubtractInt32-16          	    7729	        41.84 ns/op
+BenchmarkSafeSubtractInt32
+BenchmarkSafeSubtractInt32-16      	    8593	        41.21 ns/op
+BenchmarkSafeSubtractInt32-16      	    8101	        48.11 ns/op
+BenchmarkSafeSubtractInt32-16      	    7958	        43.56 ns/op
+BenchmarkSafeSubtractInt32-16      	    8680	        43.20 ns/op
+BenchmarkSafeSubtractInt32-16      	    7028	        45.19 ns/op
+BenchmarkSafeSubtractInt32-16      	    7833	        45.78 ns/op
+BenchmarkSafeSubtractInt32-16      	    8307	        47.29 ns/op
+BenchmarkSafeSubtractInt32-16      	    8454	        46.77 ns/op
+BenchmarkSafeSubtractInt32-16      	    7665	        46.13 ns/op
+BenchmarkSafeSubtractInt32-16      	    6846	        49.86 ns/op
+BenchmarkSubtractFloat32
+BenchmarkSubtractFloat32-16        	    9031	        38.90 ns/op
+BenchmarkSubtractFloat32-16        	    8313	        38.13 ns/op
+BenchmarkSubtractFloat32-16        	    8698	        39.85 ns/op
+BenchmarkSubtractFloat32-16        	    9409	        40.38 ns/op
+BenchmarkSubtractFloat32-16        	    9240	        39.93 ns/op
+BenchmarkSubtractFloat32-16        	    9411	        39.65 ns/op
+BenchmarkSubtractFloat32-16        	    8720	        38.11 ns/op
+BenchmarkSubtractFloat32-16        	    8864	        44.88 ns/op
+BenchmarkSubtractFloat32-16        	    9006	        39.35 ns/op
+BenchmarkSubtractFloat32-16        	    8469	        37.96 ns/op
+BenchmarkSafeSubtractFloat32
+BenchmarkSafeSubtractFloat32-16    	    7563	        46.44 ns/op
+BenchmarkSafeSubtractFloat32-16    	    7165	        45.19 ns/op
+BenchmarkSafeSubtractFloat32-16    	    8020	        45.02 ns/op
+BenchmarkSafeSubtractFloat32-16    	    7856	        44.67 ns/op
+BenchmarkSafeSubtractFloat32-16    	    6614	        46.63 ns/op
+BenchmarkSafeSubtractFloat32-16    	    7938	        46.31 ns/op
+BenchmarkSafeSubtractFloat32-16    	    8082	        46.66 ns/op
+BenchmarkSafeSubtractFloat32-16    	    7928	        44.41 ns/op
+BenchmarkSafeSubtractFloat32-16    	    7468	        44.64 ns/op
+BenchmarkSafeSubtractFloat32-16    	    7844	        47.91 ns/op
+BenchmarkSubtractUint64
+BenchmarkSubtractUint64-16         	    9409	        37.61 ns/op
+BenchmarkSubtractUint64-16         	    9876	        38.39 ns/op
+BenchmarkSubtractUint64-16         	    9416	        37.81 ns/op
+BenchmarkSubtractUint64-16         	    9144	        38.90 ns/op
+BenchmarkSubtractUint64-16         	    8520	        40.42 ns/op
+BenchmarkSubtractUint64-16         	    9630	        39.32 ns/op
+BenchmarkSubtractUint64-16         	    7732	        44.43 ns/op
+BenchmarkSubtractUint64-16         	    9388	        37.43 ns/op
+BenchmarkSubtractUint64-16         	    8685	        37.63 ns/op
+BenchmarkSubtractUint64-16         	    8792	        38.16 ns/op
+BenchmarkSafeSubtractUint64
+BenchmarkSafeSubtractUint64-16     	    8005	        43.23 ns/op
+BenchmarkSafeSubtractUint64-16     	    8024	        43.35 ns/op
+BenchmarkSafeSubtractUint64-16     	    8301	        43.49 ns/op
+BenchmarkSafeSubtractUint64-16     	    8203	        44.81 ns/op
+BenchmarkSafeSubtractUint64-16     	    7927	        45.31 ns/op
+BenchmarkSafeSubtractUint64-16     	    7366	        47.47 ns/op
+BenchmarkSafeSubtractUint64-16     	    6843	        48.89 ns/op
+BenchmarkSafeSubtractUint64-16     	    6876	        46.10 ns/op
+BenchmarkSafeSubtractUint64-16     	    7796	        45.85 ns/op
+BenchmarkSafeSubtractUint64-16     	    7964	        45.13 ns/op
+BenchmarkSubtractInt64
+BenchmarkSubtractInt64-16          	    9576	        38.46 ns/op
+BenchmarkSubtractInt64-16          	    8733	        36.85 ns/op
+BenchmarkSubtractInt64-16          	    8281	        41.76 ns/op
+BenchmarkSubtractInt64-16          	    8330	        39.08 ns/op
+BenchmarkSubtractInt64-16          	    9117	        40.49 ns/op
+BenchmarkSubtractInt64-16          	    9876	        37.12 ns/op
+BenchmarkSubtractInt64-16          	    8780	        41.12 ns/op
+BenchmarkSubtractInt64-16          	    9220	        37.98 ns/op
+BenchmarkSubtractInt64-16          	    9079	        38.01 ns/op
+BenchmarkSubtractInt64-16          	    9734	        37.14 ns/op
+BenchmarkSafeSubtractInt64
+BenchmarkSafeSubtractInt64-16      	    6529	        60.55 ns/op
+BenchmarkSafeSubtractInt64-16      	    7857	        45.14 ns/op
+BenchmarkSafeSubtractInt64-16      	    7360	        45.80 ns/op
+BenchmarkSafeSubtractInt64-16      	    7448	        46.24 ns/op
+BenchmarkSafeSubtractInt64-16      	    7800	        48.27 ns/op
+BenchmarkSafeSubtractInt64-16      	    8277	        45.72 ns/op
+BenchmarkSafeSubtractInt64-16      	    8424	        42.83 ns/op
+BenchmarkSafeSubtractInt64-16      	    8124	        46.43 ns/op
+BenchmarkSafeSubtractInt64-16      	    7148	        44.04 ns/op
+BenchmarkSafeSubtractInt64-16      	    7740	        45.18 ns/op
+BenchmarkSubtractFloat64
+BenchmarkSubtractFloat64-16        	    9758	        36.92 ns/op
+BenchmarkSubtractFloat64-16        	    9259	        44.46 ns/op
+BenchmarkSubtractFloat64-16        	    7830	        40.66 ns/op
+BenchmarkSubtractFloat64-16        	    9433	        37.54 ns/op
+BenchmarkSubtractFloat64-16        	    8436	        39.33 ns/op
+BenchmarkSubtractFloat64-16        	    9064	        37.93 ns/op
+BenchmarkSubtractFloat64-16        	    9379	        43.82 ns/op
+BenchmarkSubtractFloat64-16        	    9186	        40.54 ns/op
+BenchmarkSubtractFloat64-16        	    8209	        39.33 ns/op
+BenchmarkSubtractFloat64-16        	    9456	        41.04 ns/op
+BenchmarkSafeSubtractFloat64
+BenchmarkSafeSubtractFloat64-16    	    6394	        47.30 ns/op
+BenchmarkSafeSubtractFloat64-16    	    8358	        42.62 ns/op
+BenchmarkSafeSubtractFloat64-16    	    7742	        45.09 ns/op
+BenchmarkSafeSubtractFloat64-16    	    8245	        46.50 ns/op
+BenchmarkSafeSubtractFloat64-16    	    8478	        47.87 ns/op
+BenchmarkSafeSubtractFloat64-16    	    7326	        50.27 ns/op
+BenchmarkSafeSubtractFloat64-16    	    8136	        43.95 ns/op
+BenchmarkSafeSubtractFloat64-16    	    8392	        44.46 ns/op
+BenchmarkSafeSubtractFloat64-16    	    8294	        42.86 ns/op
+BenchmarkSafeSubtractFloat64-16    	    8072	        44.48 ns/op
+PASS
+ok  	safe/test	217.665s
