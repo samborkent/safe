@@ -5,7 +5,7 @@ import (
 	"math/rand/v2"
 	"testing"
 
-	"safe"
+	"github.com/samborkent/safe"
 
 	"github.com/stretchr/testify/assert"
 )

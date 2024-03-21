@@ -1,4 +1,4 @@
-module safe
+module github.com/samborkent/safe
 
 go 1.22.0
 

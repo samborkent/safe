@@ -3,7 +3,7 @@ package safe_test
 import (
 	"testing"
 
-	"safe"
+	"github.com/samborkent/safe"
 
 	"github.com/stretchr/testify/assert"
 )
