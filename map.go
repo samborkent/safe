@@ -44,6 +44,16 @@ func (m *Map[Key, Value]) Delete(key Key) {
 	m.lock.Unlock()
 }
 
+func (m *Map[Key, Value]) Len() int {
+	if !m._isInitialized {
+		return 0
+	}
+
+	m.lock.RLock()
+	defer m.lock.RUnlock()
+	return len(m.data)
+}
+
 func (m *Map[Key, Value]) Load(key Key) (value Value, ok bool) {
 	if !m._isInitialized {
 		return *new(Value), false
