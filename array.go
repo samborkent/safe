@@ -7,9 +7,12 @@ import (
 )
 
 // A generic fixed size slice with out-of-bounds protection by clamping indices to [0, len-1].
-type Array[T any] []T
+type Array[T any] struct {
+	initialized bool
+	array       []T
+}
 
-func NewArray[T any](length int) Array[T] {
+func NewArray[T any](length int) *Array[T] {
 	if length < 0 {
 		length = 0
 	} else if length > math.MaxUint16 {
@@ -23,22 +26,41 @@ func NewArray[T any](length int) Array[T] {
 		}
 	}
 
-	return make(Array[T], length)
+	return &Array[T]{
+		initialized: true,
+		array:       make([]T, length),
+	}
 }
 
 func (a Array[T]) Index(i int) T {
-	return a[a.clampIndex(i)]
+	if !a.initialized {
+		return *new(T)
+	}
+
+	return a.array[a.clampIndex(i)]
+}
+
+func (a Array[T]) Len() int {
+	if !a.initialized {
+		return 0
+	}
+
+	return len(a.array)
 }
 
 func (a Array[T]) Set(i int, value T) {
-	a[a.clampIndex(i)] = value
+	if !a.initialized {
+		return
+	}
+
+	a.array[a.clampIndex(i)] = value
 }
 
 func (a Array[T]) clampIndex(i int) int {
 	if i < 0 {
 		return 0
-	} else if i >= len(a) {
-		return len(a) - 1
+	} else if i >= a.Len() {
+		return a.Len() - 1
 	}
 
 	return i

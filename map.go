@@ -7,21 +7,31 @@ import (
 // TODO: test
 
 type Map[Key comparable, Value any] struct {
-	_isInitialized bool
-	data           map[Key]Value
-	lock           *sync.RWMutex
+	initialized bool
+	data        map[Key]Value
+	lock        *sync.RWMutex
 }
 
 func NewMap[Key comparable, Value any](size int) *Map[Key, Value] {
 	return &Map[Key, Value]{
-		_isInitialized: true,
-		data:           make(map[Key]Value, size),
-		lock:           new(sync.RWMutex),
+		initialized: true,
+		data:        make(map[Key]Value, size),
+		lock:        new(sync.RWMutex),
 	}
 }
 
+func (m *Map[Key, Value]) Clear(key Key) {
+	if !m.initialized {
+		return
+	}
+
+	m.lock.Lock()
+	m.data = make(map[Key]Value, len(m.data))
+	m.lock.Unlock()
+}
+
 func (m *Map[Key, Value]) Delete(key Key) {
-	if !m._isInitialized {
+	if !m.initialized {
 		return
 	}
 
@@ -31,7 +41,7 @@ func (m *Map[Key, Value]) Delete(key Key) {
 }
 
 func (m *Map[Key, Value]) Len() int {
-	if !m._isInitialized {
+	if !m.initialized {
 		return 0
 	}
 
@@ -41,7 +51,7 @@ func (m *Map[Key, Value]) Len() int {
 }
 
 func (m *Map[Key, Value]) Load(key Key) (value Value, ok bool) {
-	if !m._isInitialized {
+	if !m.initialized {
 		return *new(Value), false
 	}
 
@@ -52,7 +62,7 @@ func (m *Map[Key, Value]) Load(key Key) (value Value, ok bool) {
 }
 
 func (m *Map[Key, Value]) Range(f func(key Key, value Value) bool) {
-	if !m._isInitialized {
+	if !m.initialized {
 		return
 	}
 
@@ -64,7 +74,7 @@ func (m *Map[Key, Value]) Range(f func(key Key, value Value) bool) {
 }
 
 func (m *Map[Key, Value]) Swap(key Key, value Value) (previous Value, loaded bool) {
-	if !m._isInitialized {
+	if !m.initialized {
 		return
 	}
 
@@ -76,7 +86,7 @@ func (m *Map[Key, Value]) Swap(key Key, value Value) (previous Value, loaded boo
 }
 
 func (m *Map[Key, Value]) Store(key Key, value Value) {
-	if !m._isInitialized {
+	if !m.initialized {
 		return
 	}
 

@@ -13,15 +13,15 @@ import (
 func TestNewArray(t *testing.T) {
 	lenA := 6
 	a := safe.NewArray[float64](lenA)
-	assert.Equal(t, lenA, len(a))
+	assert.Equal(t, lenA, a.Len())
 
 	lenB := 0
 	b := safe.NewArray[float64](lenB)
-	assert.Equal(t, lenB, len(b))
+	assert.Equal(t, lenB, b.Len())
 
 	lenC := -1
 	c := safe.NewArray[float64](lenC)
-	assert.Equal(t, 0, len(c))
+	assert.Equal(t, 0, c.Len())
 
 	lenD := math.MaxInt64
 	_ = safe.NewArray[float64](lenD)
@@ -32,10 +32,10 @@ func TestArrayIndex(t *testing.T) {
 	a := safe.NewArray[int](lenA)
 	_ = a.Index(0)
 	_ = a.Index(lenA)
-	a[0] = 1
-	a[1] = 2
-	a[2] = 3
-	a[3] = 4
+	a.Set(0, 1)
+	a.Set(1, 2)
+	a.Set(2, 3)
+	a.Set(3, 4)
 	assert.Equal(t, 1, a.Index(-1))
 	assert.Equal(t, 4, a.Index(4))
 }
