@@ -25,9 +25,16 @@ func NewArray[T any](length int) *Array[T] {
 
 		sizeOf := uint64(unsafe.Sizeof(*new(T)))
 
+		if sizeOf == 0 {
+			return &Array[T]{}
+		}
+
+		// TODO: check if this is an accurate way calculate momory available and prevent out of memory panic
+		malloc := (m.Sys - m.Alloc) / sizeOf
+
 		// Limit the length by the maximum memory available
-		if uint64(length)*sizeOf > m.Sys-m.Alloc {
-			length = int((m.Sys - m.Alloc) / sizeOf)
+		if malloc < math.MaxInt && length > int(malloc) {
+			length = int(malloc)
 		}
 	}
 
