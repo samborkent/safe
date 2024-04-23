@@ -3,6 +3,7 @@ package safe
 import (
 	"math"
 	"runtime"
+	"sync"
 	"unsafe"
 )
 
@@ -10,17 +11,21 @@ import (
 type Array[T any] struct {
 	initialized bool
 	array       []T
+	lock        *sync.RWMutex
 }
 
 func NewArray[T any](length int) *Array[T] {
-	if length < 0 {
-		length = 0
+	if length <= 0 {
+		// Minimum array length is 1
+		length = 1
 	} else if length > math.MaxUint16 {
+		// Only do a memory check for very large arrays
 		var m runtime.MemStats
 		runtime.ReadMemStats(&m)
 
 		sizeOf := uint64(unsafe.Sizeof(*new(T)))
 
+		// Limit the length by the maximum memory available
 		if uint64(length)*sizeOf > m.Sys-m.Alloc {
 			length = int((m.Sys - m.Alloc) / sizeOf)
 		}
@@ -29,34 +34,52 @@ func NewArray[T any](length int) *Array[T] {
 	return &Array[T]{
 		initialized: true,
 		array:       make([]T, length),
+		lock:        new(sync.RWMutex),
 	}
 }
 
-func (a Array[T]) Index(i int) T {
-	if !a.initialized {
-		return *new(T)
-	}
-
-	return a.array[a.clampIndex(i)]
-}
-
-func (a Array[T]) Len() int {
-	if !a.initialized {
-		return 0
-	}
-
-	return len(a.array)
-}
-
-func (a Array[T]) Set(i int, value T) {
+func (a *Array[T]) Clear() {
 	if !a.initialized {
 		return
 	}
 
-	a.array[a.clampIndex(i)] = value
+	a.lock.Lock()
+	a.array = make([]T, a.Len())
+	a.lock.Unlock()
 }
 
-func (a Array[T]) clampIndex(i int) int {
+func (a *Array[T]) Index(i int) T {
+	if !a.initialized {
+		return *new(T)
+	}
+
+	a.lock.RLock()
+	defer a.lock.RUnlock()
+	return a.array[a.clampIndex(i)]
+}
+
+func (a *Array[T]) Len() int {
+	if !a.initialized {
+		return 0
+	}
+
+	a.lock.RLock()
+	defer a.lock.RUnlock()
+	return len(a.array)
+}
+
+func (a *Array[T]) Set(i int, value T) {
+	if !a.initialized {
+		return
+	}
+
+	a.lock.Lock()
+	a.array[a.clampIndex(i)] = value
+	a.lock.Unlock()
+}
+
+// Clamp an index to the bounds of the array
+func (a *Array[T]) clampIndex(i int) int {
 	if i < 0 {
 		return 0
 	} else if i >= a.Len() {
