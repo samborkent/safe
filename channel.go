@@ -8,11 +8,13 @@ import (
 	"unsafe"
 )
 
+// A generic blocking channel with double closing and nil channel protection.
 type Channel[T any] struct {
 	initialized bool
 	channel     chan T
 	isClosed    *atomic.Bool
 	closeOnce   *sync.Once
+	lock        *sync.Mutex
 }
 
 // A generic channel with double closing and nil channel protection.
@@ -44,7 +46,24 @@ func NewChannel[T any](size int) *Channel[T] {
 		channel:     make(chan T, size),
 		isClosed:    new(atomic.Bool),
 		closeOnce:   new(sync.Once),
+		lock:        new(sync.Mutex),
 	}
+}
+
+// TODO: test
+func (c *Channel[T]) Clear() {
+	if !c.initialized {
+		return
+	}
+
+	c.lock.Lock()
+
+	if !c.isClosed.Load() {
+		close(c.channel)
+	}
+
+	c.channel = make(chan T, len(c.channel))
+	c.lock.Unlock()
 }
 
 func (c *Channel[T]) Close() {
@@ -52,10 +71,19 @@ func (c *Channel[T]) Close() {
 		return
 	}
 
+	// TODO: check if this is necessary and if the atomic bool is not sufficient
 	c.closeOnce.Do(func() {
 		c.isClosed.Store(true)
 		close(c.channel)
 	})
+}
+
+func (c *Channel[T]) Len() int {
+	if !c.initialized || c.isClosed.Load() {
+		return 0
+	}
+
+	return len(c.channel)
 }
 
 func (c *Channel[T]) Pop() T {

@@ -12,10 +12,10 @@ import (
 func TestCircularArrayIndex(t *testing.T) {
 	lenA := 4
 	a := safe.NewCircularArray[int](lenA)
-	a[0] = 1
-	a[1] = 2
-	a[2] = 3
-	a[3] = 4
+	a.Set(0, 1)
+	a.Set(1, 2)
+	a.Set(2, 3)
+	a.Set(3, 4)
 	assert.Equal(t, 1, a.Index(0))
 	assert.Equal(t, 4, a.Index(3))
 	assert.Equal(t, 4, a.Index(-1))
