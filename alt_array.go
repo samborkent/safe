@@ -68,9 +68,6 @@ func (a *AltArray[T]) Index(i int) T {
 
 	for {
 		if !a.valueLocks[index].Load() {
-			a.valueLocks[index].Store(true)
-			defer a.valueLocks[index].Store(false)
-
 			return a.array[index]
 		}
 	}
