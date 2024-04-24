@@ -1,27 +1,35 @@
 package safe
 
+import "sync/atomic"
+
 type Signal[T any] struct {
-	value       T
-	subscribers []*T
+	initialized bool
+	signal      *atomic.Pointer[T]
 }
 
 func NewSignal[T any](value T) *Signal[T] {
+	ptr := &value
+	signal := new(atomic.Pointer[T])
+	signal.Store(ptr)
+
 	return &Signal[T]{
-		value: value,
+		initialized: true,
+		signal:      signal,
 	}
 }
 
 func (s *Signal[T]) Get() T {
-	return s.value
+	if !s.initialized {
+		return *new(T)
+	}
+
+	return *s.signal.Load()
 }
 
-func (s *Signal[T]) Set(value T) {
-	s.value = value
-}
+func (s *Signal[T]) Store(value T) {
+	if !s.initialized {
+		return
+	}
 
-func (s *Signal[T]) Subscribe(subscriber *T) {
-	s.subscribers = append(s.subscribers, subscriber)
-}
-
-func (s *Signal[T]) notify() {
+	s.signal.Store(&value)
 }
