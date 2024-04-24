@@ -3,18 +3,18 @@ package safe
 import (
 	"math"
 	"runtime"
-	"sync"
+	"sync/atomic"
 	"unsafe"
 )
 
 // A generic fixed size slice with out-of-bounds protection by clamping indices to [0, len-1].
-type Array[T any] struct {
+type AltArray[T any] struct {
 	initialized bool
 	array       []T
-	lock        *sync.RWMutex
+	valueLocks  []*atomic.Bool
 }
 
-func NewArray[T any](length int) *Array[T] {
+func NewAltArray[T any](length int) *AltArray[T] {
 	if length <= 0 {
 		// Minimum array length is 1
 		length = 1
@@ -26,7 +26,7 @@ func NewArray[T any](length int) *Array[T] {
 		sizeOf := uint64(unsafe.Sizeof(*new(T)))
 
 		if sizeOf == 0 {
-			return &Array[T]{}
+			return &AltArray[T]{}
 		}
 
 		// TODO: check if this is an accurate way calculate momory available and prevent out of memory panic
@@ -38,34 +38,45 @@ func NewArray[T any](length int) *Array[T] {
 		}
 	}
 
-	return &Array[T]{
+	return &AltArray[T]{
 		initialized: true,
 		array:       make([]T, length),
-		lock:        new(sync.RWMutex),
+		valueLocks:  make([]*atomic.Bool, length),
 	}
 }
 
-func (a *Array[T]) Clear() {
+func (a *AltArray[T]) Clear() {
 	if !a.initialized {
 		return
 	}
 
-	a.lock.Lock()
-	a.array = make([]T, a.Len())
-	a.lock.Unlock()
+	zero := *new(T)
+
+	for i := range a.array {
+		a.valueLocks[i].Store(true)
+		a.array[i] = zero
+		a.valueLocks[i].Store(false)
+	}
 }
 
-func (a *Array[T]) Index(i int) T {
+func (a *AltArray[T]) Index(i int) T {
 	if !a.initialized {
 		return *new(T)
 	}
 
-	a.lock.RLock()
-	defer a.lock.RUnlock()
-	return a.array[a.clampIndex(i)]
+	index := a.clampIndex(i)
+
+	for {
+		if !a.valueLocks[index].Load() {
+			a.valueLocks[index].Store(true)
+			defer a.valueLocks[index].Store(false)
+
+			return a.array[index]
+		}
+	}
 }
 
-func (a *Array[T]) Len() int {
+func (a *AltArray[T]) Len() int {
 	if !a.initialized {
 		return 0
 	}
@@ -73,18 +84,20 @@ func (a *Array[T]) Len() int {
 	return len(a.array)
 }
 
-func (a *Array[T]) Set(i int, value T) {
+func (a *AltArray[T]) Set(i int, value T) {
 	if !a.initialized {
 		return
 	}
 
-	a.lock.Lock()
-	a.array[a.clampIndex(i)] = value
-	a.lock.Unlock()
+	index := a.clampIndex(i)
+
+	a.valueLocks[index].Store(true)
+	a.array[index] = value
+	a.valueLocks[index].Store(false)
 }
 
 // Clamp an index to the bounds of the array
-func (a *Array[T]) clampIndex(i int) int {
+func (a *AltArray[T]) clampIndex(i int) int {
 	if i < 0 {
 		return 0
 	} else if i >= a.Len() {

@@ -71,8 +71,6 @@ func (a *CircularArray[T]) Len() int {
 		return 0
 	}
 
-	a.lock.RLock()
-	defer a.lock.RUnlock()
 	return len(a.array)
 }
 
