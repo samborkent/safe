@@ -6,58 +6,66 @@ import (
 	"testing"
 
 	"github.com/samborkent/safe"
-
-	"github.com/stretchr/testify/assert"
+	"github.com/samborkent/safe/thelper"
 )
 
 func TestMultiply(t *testing.T) {
-	var au8, bu8 uint8 = math.MaxUint8, math.MaxUint8
-	assert.Equal(t, uint8(math.MaxUint8), safe.Multiply(au8, bu8))
+	u8 := uint8(math.MaxUint8)
+	thelper.Equal(t, safe.Multiply(u8, u8), u8, "uint8")
 
-	var au16, bu16 uint16 = math.MaxUint16, math.MaxUint16
-	assert.Equal(t, uint16(math.MaxUint16), safe.Multiply(au16, bu16))
+	u16 := uint16(math.MaxUint16)
+	thelper.Equal(t, safe.Multiply(u16, u16), u16, "uint16")
 
-	var au32, bu32 uint32 = math.MaxUint32, math.MaxUint32
-	assert.Equal(t, uint32(math.MaxUint32), safe.Multiply(au32, bu32))
+	u32 := uint32(math.MaxUint32)
+	thelper.Equal(t, safe.Multiply(u32, u32), u32, "uint32")
 
-	var au64, bu64 uint64 = math.MaxUint64, math.MaxUint64
-	assert.Equal(t, uint64(math.MaxUint64), safe.Multiply(au64, bu64))
+	u64 := uint64(math.MaxUint64)
+	thelper.Equal(t, safe.Multiply(u64, u64), u64, "uint64")
 
-	var ap8, bp8 int8 = math.MaxInt8, math.MaxInt8
-	assert.Equal(t, int8(math.MaxInt8), safe.Multiply(ap8, bp8))
+	u := uint(math.MaxUint)
+	thelper.Equal(t, safe.Multiply(u, u), u, "uint")
 
-	var an8, bn8 int8 = math.MinInt8, math.MinInt8
-	assert.Equal(t, int8(math.MinInt8), safe.Multiply(an8, bn8))
+	p8 := int8(math.MaxInt8)
+	thelper.Equal(t, safe.Multiply(p8, p8), p8, "int8 max")
 
-	var ap16, bp16 int16 = math.MaxInt16, math.MaxInt16
-	assert.Equal(t, int16(math.MaxInt16), safe.Multiply(ap16, bp16))
+	n8 := int8(math.MinInt8)
+	thelper.Equal(t, safe.Multiply(n8, n8), n8, "int8 min")
 
-	var an16, bn16 int16 = math.MinInt16, math.MinInt16
-	assert.Equal(t, int16(math.MinInt16), safe.Multiply(an16, bn16))
+	p16 := int16(math.MaxInt16)
+	thelper.Equal(t, safe.Multiply(p16, p16), p16, "int16 max")
 
-	var ap32, bp32 int32 = math.MaxInt32, math.MaxInt32
-	assert.Equal(t, int32(math.MaxInt32), safe.Multiply(ap32, bp32))
+	n16 := int16(math.MinInt16)
+	thelper.Equal(t, safe.Multiply(n16, n16), n16, "int16 min")
 
-	var an32, bn32 int32 = math.MinInt32, math.MinInt32
-	assert.Equal(t, int32(math.MinInt32), safe.Multiply(an32, bn32))
+	p32 := int32(math.MaxInt32)
+	thelper.Equal(t, safe.Multiply(p32, p32), p32, "int32 max")
 
-	var ap64, bp64 int64 = math.MaxInt64, math.MaxInt64
-	assert.Equal(t, int64(math.MaxInt64), safe.Multiply(ap64, bp64))
+	n32 := int32(math.MinInt32)
+	thelper.Equal(t, safe.Multiply(n32, n32), n32, "int32 min")
 
-	var an64, bn64 int64 = math.MinInt64, math.MinInt64
-	assert.Equal(t, int64(math.MinInt64), safe.Multiply(an64, bn64))
+	p64 := int64(math.MaxInt64)
+	thelper.Equal(t, safe.Multiply(p64, p64), p64, "int64 max")
 
-	var apf32, bpf32 float32 = math.MaxFloat32, math.MaxFloat32
-	assert.Equal(t, float32(math.MaxFloat32), safe.Multiply(apf32, bpf32))
+	n64 := int64(math.MinInt64)
+	thelper.Equal(t, safe.Multiply(n64, n64), n64, "int64 min")
 
-	var anf32, bnf32 float32 = -math.MaxFloat32, -math.MaxFloat32
-	assert.Equal(t, float32(-math.MaxFloat32), safe.Multiply(anf32, bnf32))
+	pi := int64(math.MaxInt64)
+	thelper.Equal(t, safe.Multiply(pi, pi), pi, "int max")
 
-	var apf64, bpf64 float64 = math.MaxFloat64, math.MaxFloat64
-	assert.Equal(t, float64(math.MaxFloat64), safe.Multiply(apf64, bpf64))
+	ni := int64(math.MinInt64)
+	thelper.Equal(t, safe.Multiply(ni, ni), ni, "int min")
 
-	var anf64, bnf64 float64 = -math.MaxFloat64, -math.MaxFloat64
-	assert.Equal(t, float64(-math.MaxFloat64), safe.Multiply(anf64, bnf64))
+	pf32 := float32(math.MaxFloat32)
+	thelper.Equal(t, safe.Multiply(pf32, pf32), pf32, "float32 max")
+
+	nf32 := float32(-math.MaxFloat32)
+	thelper.Equal(t, safe.Multiply(nf32, nf32), nf32, "float32 min")
+
+	pf64 := float64(math.MaxFloat64)
+	thelper.Equal(t, safe.Multiply(pf64, pf64), pf64, "float64 max")
+
+	nf64 := float64(-math.MaxFloat64)
+	thelper.Equal(t, safe.Multiply(nf64, nf64), nf64, "float64 min")
 }
 
 var globalMultiplyUint8 uint8

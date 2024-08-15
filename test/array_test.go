@@ -6,49 +6,57 @@ import (
 	"testing"
 
 	"github.com/samborkent/safe"
-
-	"github.com/stretchr/testify/assert"
+	"github.com/samborkent/safe/thelper"
 )
 
 func TestNewArray(t *testing.T) {
+	t.Parallel()
+
 	lenA := 6
 	a := safe.NewArray[float64](lenA)
-	assert.Equal(t, lenA, a.Len())
+	thelper.Equal(t, a.Len(), lenA, "random length")
 
-	lenB := 0
-	b := safe.NewArray[float64](lenB)
-	assert.Equal(t, lenB, b.Len())
+	b := safe.NewArray[float64](0)
+	thelper.Equal(t, b.Len(), 1, "zero length")
 
-	lenC := -1
-	c := safe.NewArray[float64](lenC)
-	assert.Equal(t, 0, c.Len())
+	c := safe.NewArray[float64](-1)
+	thelper.Equal(t, c.Len(), 1, "negative length")
 
 	lenD := math.MaxInt64
-	_ = safe.NewArray[float64](lenD)
+	d := safe.NewArray[float64](lenD)
+	thelper.Less(t, d.Len(), lenD, "max length")
 }
 
 func TestArrayIndex(t *testing.T) {
+	t.Parallel()
+
 	lenA := 4
 	a := safe.NewArray[int](lenA)
-	_ = a.Index(0)
-	_ = a.Index(lenA)
+
 	a.Set(0, 1)
 	a.Set(1, 2)
 	a.Set(2, 3)
 	a.Set(3, 4)
-	assert.Equal(t, 1, a.Index(-1))
-	assert.Equal(t, 4, a.Index(4))
+
+	thelper.Equal(t, a.Index(0), 1, "zero index")
+	thelper.Equal(t, a.Index(lenA-1), 4, "last index")
+	thelper.Equal(t, a.Index(-1), 1, "negative index")
+	thelper.Equal(t, a.Index(lenA), 4, "out-of-bounds index")
 }
 
 func TestArraySet(t *testing.T) {
+	t.Parallel()
+
 	x := rand.Int()
 	y := rand.Int()
 
 	lenA := 4
 	a := safe.NewArray[int](lenA)
-	assert.Equal(t, 0, a.Index(0))
+	thelper.Equal(t, a.Index(0), 0, "unset zero element")
+
 	a.Set(0, x)
-	assert.Equal(t, x, a.Index(0))
+	thelper.Equal(t, a.Index(0), x, "set zero element")
+
 	a.Set(lenA, y)
-	assert.Equal(t, y, a.Index(lenA-1))
+	thelper.Equal(t, a.Index(lenA-1), y, "set last element")
 }

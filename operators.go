@@ -16,6 +16,22 @@ func Clamp[T Number](number, min, max T) T {
 	return number
 }
 
+func ClampMin[T Number](number, min T) T {
+	if number < min {
+		return min
+	}
+
+	return number
+}
+
+func ClampMax[T Number](number, max T) T {
+	if number > max {
+		return max
+	}
+
+	return number
+}
+
 func CompareFloats[T constraints.Float](a, b, tolerance, relativeTolerance T) bool {
 	diff := T(math.Abs(float64(a - b)))
 
@@ -28,8 +44,8 @@ func CompareFloats[T constraints.Float](a, b, tolerance, relativeTolerance T) bo
 	return false
 }
 
-func Ternary[T any](condition *bool, incase T, otherwise T) T {
-	if *condition {
+func Ternary[T any](condition bool, incase T, otherwise T) T {
+	if condition {
 		return incase
 	} else {
 		return otherwise

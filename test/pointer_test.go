@@ -1,11 +1,11 @@
 package safe
 
 import (
+	"math/rand/v2"
 	"testing"
 
 	"github.com/samborkent/safe"
-
-	"github.com/stretchr/testify/assert"
+	"github.com/samborkent/safe/thelper"
 )
 
 func TestPointerDereference(t *testing.T) {
@@ -13,19 +13,25 @@ func TestPointerDereference(t *testing.T) {
 	_ = safe.Dereference(q)
 	a := 10
 	b := &a
-	assert.Equal(t, a, safe.Dereference(b))
+	thelper.Equal(t, safe.Dereference(b), a, "dereference pointer")
 }
 
 func TestPointerSetValue(t *testing.T) {
-	a := 10
+	a := rand.Int()
 	b := &a
-	assert.Equal(t, a, safe.Dereference(b))
-	safe.SetValue(&b, 20)
-	assert.Equal(t, 20, safe.Dereference(b))
+	thelper.Equal(t, safe.Dereference(b), a, "dereference pointer")
+
+	val1 := rand.Int()
+	safe.SetValue(&b, val1)
+	thelper.Equal(t, safe.Dereference(b), val1, "dereference set pointer")
+
+	val2 := rand.Int()
 	var c *int
-	safe.SetValue(&c, 20)
-	assert.Equal(t, 20, safe.Dereference(c))
+	safe.SetValue(&c, val2)
+	thelper.Equal(t, safe.Dereference(c), val2, "dereference new set pointer")
+
+	val3 := rand.Int()
 	d := new(int)
-	safe.SetValue(&d, 20)
-	assert.Equal(t, 20, *d)
+	safe.SetValue(&d, val3)
+	thelper.Equal(t, *d, val3, "unsafely dereference new set pointer")
 }

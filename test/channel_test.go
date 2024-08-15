@@ -1,26 +1,33 @@
 package safe_test
 
 import (
+	"math/rand/v2"
 	"testing"
 
 	"github.com/samborkent/safe"
-
-	"github.com/stretchr/testify/assert"
+	"github.com/samborkent/safe/thelper"
 )
 
 func TestChannelClose(t *testing.T) {
+	t.Parallel()
+
 	ch := safe.NewChannel[int](0)
 	ch.Close()
 	ch.Close()
 }
 
 func TestChannelPushPop(t *testing.T) {
+	t.Parallel()
+
 	for range 1000000 {
 		ch := safe.NewChannel[int](0)
-		go ch.Push(5)
-		assert.Equal(t, 5, ch.Pop())
+		random1 := rand.Int()
+		go ch.Push(random1)
+		thelper.Equal(t, ch.Pop(), random1, "before close")
+
 		ch.Close()
-		go ch.Push(6)
-		assert.Equal(t, 0, ch.Pop())
+		random2 := rand.Int()
+		go ch.Push(random2)
+		thelper.Equal(t, ch.Pop(), 0, "after close")
 	}
 }

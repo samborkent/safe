@@ -1,6 +1,7 @@
 package safe
 
 import (
+	"iter"
 	"math"
 	"runtime"
 	"sync"
@@ -55,14 +56,14 @@ func (a *Array[T]) Clear() {
 	a.lock.Unlock()
 }
 
-func (a *Array[T]) Index(i int) T {
+func (a *Array[T]) Index(index int) T {
 	if !a.initialized {
 		return *new(T)
 	}
 
 	a.lock.RLock()
 	defer a.lock.RUnlock()
-	return a.array[a.clampIndex(i)]
+	return a.array[a.clampIndex(index)]
 }
 
 func (a *Array[T]) Len() int {
@@ -73,23 +74,40 @@ func (a *Array[T]) Len() int {
 	return len(a.array)
 }
 
-func (a *Array[T]) Set(i int, value T) {
+// TODO: test
+func (a *Array[T]) Range() iter.Seq2[int, T] {
+	if !a.initialized {
+		return func(func(int, T) bool) {
+			return
+		}
+	}
+
+	return func(yield func(int, T) bool) {
+		for i, v := range a.array {
+			if !yield(i, v) {
+				return
+			}
+		}
+	}
+}
+
+func (a *Array[T]) Set(index int, value T) {
 	if !a.initialized {
 		return
 	}
 
 	a.lock.Lock()
-	a.array[a.clampIndex(i)] = value
+	a.array[a.clampIndex(index)] = value
 	a.lock.Unlock()
 }
 
 // Clamp an index to the bounds of the array
-func (a *Array[T]) clampIndex(i int) int {
-	if i < 0 {
+func (a *Array[T]) clampIndex(index int) int {
+	if index < 0 {
 		return 0
-	} else if i >= a.Len() {
+	} else if index >= a.Len() {
 		return a.Len() - 1
 	}
 
-	return i
+	return index
 }

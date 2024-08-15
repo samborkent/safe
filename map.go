@@ -1,6 +1,7 @@
 package safe
 
 import (
+	"iter"
 	"sync"
 )
 
@@ -61,14 +62,19 @@ func (m *Map[Key, Value]) Load(key Key) (value Value, ok bool) {
 	return value, ok
 }
 
-func (m *Map[Key, Value]) Range(f func(key Key, value Value) bool) {
+// TODO: test
+func (m *Map[Key, Value]) Range() iter.Seq2[Key, Value] {
 	if !m.initialized {
-		return
+		return func(func(Key, Value) bool) {
+			return
+		}
 	}
 
-	for k, v := range m.data {
-		if !f(k, v) {
-			return
+	return func(yield func(Key, Value) bool) {
+		for k, v := range m.data {
+			if !yield(k, v) {
+				return
+			}
 		}
 	}
 }

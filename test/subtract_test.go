@@ -6,58 +6,52 @@ import (
 	"testing"
 
 	"github.com/samborkent/safe"
-
-	"github.com/stretchr/testify/assert"
+	"github.com/samborkent/safe/thelper"
 )
 
 func TestSubtract(t *testing.T) {
-	var au8, bu8 uint8 = 0, math.MaxUint8
-	assert.Equal(t, uint8(0), safe.Subtract(au8, bu8))
+	u8 := uint8(math.MaxUint8)
+	thelper.Equal(t, safe.Subtract(0, u8), 0, "uint8")
 
-	var au16, bu16 uint16 = 0, math.MaxUint16
-	assert.Equal(t, uint16(0), safe.Subtract(au16, bu16))
+	u16 := uint16(math.MaxUint16)
+	thelper.Equal(t, safe.Subtract(0, u16), 0, "uint16")
 
-	var au32, bu32 uint32 = 0, math.MaxUint32
-	assert.Equal(t, uint32(0), safe.Subtract(au32, bu32))
+	u32 := uint32(math.MaxUint32)
+	thelper.Equal(t, safe.Subtract(0, u32), 0, "uint32")
 
-	var au64, bu64 uint64 = 0, math.MaxUint64
-	assert.Equal(t, uint64(0), safe.Subtract(au64, bu64))
+	u64 := uint64(math.MaxUint64)
+	thelper.Equal(t, safe.Subtract(0, u64), 0, "uint64")
 
-	var ap8, bp8 int8 = math.MinInt8, math.MaxInt8
-	assert.Equal(t, int8(math.MinInt8), safe.Subtract(ap8, bp8))
+	u := uint(math.MaxUint)
+	thelper.Equal(t, safe.Subtract(0, u), 0, "uint")
 
-	var an8, bn8 int8 = math.MaxInt8, math.MinInt8
-	assert.Equal(t, int8(math.MaxInt8), safe.Subtract(an8, bn8))
+	p8, n8 := int8(math.MaxInt8), int8(math.MinInt8)
+	thelper.Equal(t, safe.Subtract(p8, n8), p8, "int8 positive")
+	thelper.Equal(t, safe.Subtract(n8, p8), n8, "int8 negative")
 
-	var ap16, bp16 int16 = math.MinInt16, math.MaxInt16
-	assert.Equal(t, int16(math.MinInt16), safe.Subtract(ap16, bp16))
+	p16, n16 := int16(math.MaxInt16), int16(math.MinInt16)
+	thelper.Equal(t, safe.Subtract(p16, n16), p16, "int16 positive")
+	thelper.Equal(t, safe.Subtract(n16, p16), n16, "int16 negative")
 
-	var an16, bn16 int16 = math.MaxInt16, math.MinInt16
-	assert.Equal(t, int16(math.MaxInt16), safe.Subtract(an16, bn16))
+	p32, n32 := int32(math.MaxInt32), int32(math.MinInt32)
+	thelper.Equal(t, safe.Subtract(p32, n32), p32, "int32 positive")
+	thelper.Equal(t, safe.Subtract(n32, p32), n32, "int32 negative")
 
-	var ap32, bp32 int32 = math.MinInt32, math.MaxInt32
-	assert.Equal(t, int32(math.MinInt32), safe.Subtract(ap32, bp32))
+	p64, n64 := int64(math.MaxInt64), int64(math.MinInt64)
+	thelper.Equal(t, safe.Subtract(p64, n64), p64, "int64 positive")
+	thelper.Equal(t, safe.Subtract(n64, p64), n64, "int64 negative")
 
-	var an32, bn32 int32 = math.MaxInt32, math.MinInt32
-	assert.Equal(t, int32(math.MaxInt32), safe.Subtract(an32, bn32))
+	pi, ni := int(math.MaxInt), int(math.MinInt)
+	thelper.Equal(t, safe.Subtract(pi, ni), pi, "int positive")
+	thelper.Equal(t, safe.Subtract(ni, pi), ni, "int negative")
 
-	var ap64, bp64 int64 = math.MinInt64, math.MaxInt64
-	assert.Equal(t, int64(math.MinInt64), safe.Subtract(ap64, bp64))
+	pf32, nf32 := float32(math.MaxFloat32), float32(-math.MaxFloat32)
+	thelper.Equal(t, safe.Subtract(pf32, nf32), pf32, "float32 positive")
+	thelper.Equal(t, safe.Subtract(nf32, pf32), nf32, "float32 negative")
 
-	var an64, bn64 int64 = math.MaxInt64, math.MinInt64
-	assert.Equal(t, int64(math.MaxInt64), safe.Subtract(an64, bn64))
-
-	var apf32, bpf32 float32 = -math.MaxFloat32, math.MaxFloat32
-	assert.Equal(t, float32(-math.MaxFloat32), safe.Subtract(apf32, bpf32))
-
-	var anf32, bnf32 float32 = math.MaxFloat32, -math.MaxFloat32
-	assert.Equal(t, float32(math.MaxFloat32), safe.Subtract(anf32, bnf32))
-
-	var apf64, bpf64 float64 = -math.MaxFloat64, math.MaxFloat64
-	assert.Equal(t, float64(-math.MaxFloat64), safe.Subtract(apf64, bpf64))
-
-	var anf64, bnf64 float64 = math.MaxFloat64, -math.MaxFloat64
-	assert.Equal(t, float64(math.MaxFloat64), safe.Subtract(anf64, bnf64))
+	pf64, nf64 := float64(math.MaxFloat64), float64(-math.MaxFloat64)
+	thelper.Equal(t, safe.Subtract(pf64, nf64), pf64, "float64 positive")
+	thelper.Equal(t, safe.Subtract(nf64, pf64), nf64, "float64 negative")
 }
 
 var globalSubtractUint8 uint8

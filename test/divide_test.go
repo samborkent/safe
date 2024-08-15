@@ -6,60 +6,56 @@ import (
 	"testing"
 
 	"github.com/samborkent/safe"
-
-	"github.com/stretchr/testify/assert"
+	"github.com/samborkent/safe/thelper"
 )
 
 func TestDivide(t *testing.T) {
-	assert.Equal(t, 0, safe.Divide(0, 1))
+	t.Parallel()
+
+	thelper.Equal(t, safe.Divide(0, 1), 0, "zero numerator")
 
 	var au8, bu8 uint8 = 1, 0
-	assert.Equal(t, uint8(math.MaxUint8), safe.Divide(au8, bu8))
+	thelper.Equal(t, safe.Divide(au8, bu8), uint8(math.MaxUint8), "uint8")
 
 	var au16, bu16 uint16 = 1, 0
-	assert.Equal(t, uint16(math.MaxUint16), safe.Divide(au16, bu16))
+	thelper.Equal(t, safe.Divide(au16, bu16), uint16(math.MaxUint16), "uint16")
 
 	var au32, bu32 uint32 = 1, 0
-	assert.Equal(t, uint32(math.MaxUint32), safe.Divide(au32, bu32))
+	thelper.Equal(t, safe.Divide(au32, bu32), uint32(math.MaxUint32), "uint32")
 
 	var au64, bu64 uint64 = 1, 0
-	assert.Equal(t, uint64(math.MaxUint64), safe.Divide(au64, bu64))
+	thelper.Equal(t, safe.Divide(au64, bu64), uint64(math.MaxUint64), "uint64")
 
-	var ap8, bp8 int8 = 1, 0
-	assert.Equal(t, int8(math.MaxInt8), safe.Divide(ap8, bp8))
+	var au, bu uint = 1, 0
+	thelper.Equal(t, safe.Divide(au, bu), uint(math.MaxUint), "uint")
 
-	var an8, bn8 int8 = -1, 0
-	assert.Equal(t, int8(math.MinInt8), safe.Divide(an8, bn8))
+	var ap8, an8, bi8 int8 = 1, -1, 0
+	thelper.Equal(t, safe.Divide(ap8, bi8), int8(math.MaxInt8), "int8 positive")
+	thelper.Equal(t, safe.Divide(an8, bi8), int8(math.MinInt8), "int8 negative")
 
-	var ap16, bp16 int16 = 1, 0
-	assert.Equal(t, int16(math.MaxInt16), safe.Divide(ap16, bp16))
+	var ap16, an16, bi16 int16 = 1, -1, 0
+	thelper.Equal(t, safe.Divide(ap16, bi16), int16(math.MaxInt16), "int16 positive")
+	thelper.Equal(t, safe.Divide(an16, bi16), int16(math.MinInt16), "int16 negative")
 
-	var an16, bn16 int16 = -1, 0
-	assert.Equal(t, int16(math.MinInt16), safe.Divide(an16, bn16))
+	var ap32, an32, bi32 int32 = 1, -1, 0
+	thelper.Equal(t, safe.Divide(ap32, bi32), int32(math.MaxInt32), "int32 positive")
+	thelper.Equal(t, safe.Divide(an32, bi32), int32(math.MinInt32), "int32 negative")
 
-	var ap32, bp32 int32 = 1, 0
-	assert.Equal(t, int32(math.MaxInt32), safe.Divide(ap32, bp32))
+	var ap64, an64, bi64 int64 = 1, -1, 0
+	thelper.Equal(t, safe.Divide(ap64, bi64), int64(math.MaxInt64), "int64 positive")
+	thelper.Equal(t, safe.Divide(an64, bi64), int64(math.MinInt64), "int64 negative")
 
-	var an32, bn32 int32 = -1, 0
-	assert.Equal(t, int32(math.MinInt32), safe.Divide(an32, bn32))
+	var aip, ain, bi int = 1, -1, 0
+	thelper.Equal(t, safe.Divide(aip, bi), int(math.MaxInt), "int64 positive")
+	thelper.Equal(t, safe.Divide(ain, bi), int(math.MinInt), "int64 negative")
 
-	var ap64, bp64 int64 = 1, 0
-	assert.Equal(t, int64(math.MaxInt64), safe.Divide(ap64, bp64))
+	var apf32, anf32, bf32 float32 = 1, -1, 0
+	thelper.Equal(t, safe.Divide(apf32, bf32), float32(math.MaxFloat32), "float32 positive")
+	thelper.Equal(t, safe.Divide(anf32, bf32), float32(-math.MaxFloat32), "float32 negative")
 
-	var an64, bn64 int64 = -1, 0
-	assert.Equal(t, int64(math.MinInt64), safe.Divide(an64, bn64))
-
-	var apf32, bpf32 float32 = 1, 0
-	assert.Equal(t, float32(math.MaxFloat32), safe.Divide(apf32, bpf32))
-
-	var anf32, bnf32 float32 = -1, 0
-	assert.Equal(t, float32(-math.MaxFloat32), safe.Divide(anf32, bnf32))
-
-	var apf64, bpf64 float64 = 1, 0
-	assert.Equal(t, float64(math.MaxFloat64), safe.Divide(apf64, bpf64))
-
-	var anf64, bnf64 float64 = -1, 0
-	assert.Equal(t, float64(-math.MaxFloat64), safe.Divide(anf64, bnf64))
+	var apf64, anf64, bf64 float64 = 1, -1, 0
+	thelper.Equal(t, safe.Divide(apf64, bf64), float64(math.MaxFloat64), "float64 positive")
+	thelper.Equal(t, safe.Divide(anf64, bf64), float64(-math.MaxFloat64), "float64 negative")
 }
 
 var globalDivideUint8 uint8

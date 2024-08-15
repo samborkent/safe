@@ -1,6 +1,7 @@
 package safe
 
 import (
+	"iter"
 	"math"
 	"runtime"
 	"sync"
@@ -72,6 +73,23 @@ func (a *CircularArray[T]) Len() int {
 	}
 
 	return len(a.array)
+}
+
+// TODO: test
+func (a *CircularArray[T]) Range() iter.Seq2[int, T] {
+	if !a.initialized {
+		return func(func(int, T) bool) {
+			return
+		}
+	}
+
+	return func(yield func(int, T) bool) {
+		for i, v := range a.array {
+			if !yield(i, v) {
+				return
+			}
+		}
+	}
 }
 
 func (a *CircularArray[T]) Set(i int, value T) {

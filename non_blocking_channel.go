@@ -1,6 +1,7 @@
 package safe
 
 import (
+	"iter"
 	"math"
 	"runtime"
 	"sync"
@@ -121,5 +122,22 @@ func (c *NonBlockingChannel[T]) Push(item T) {
 	default:
 		c.overflowCounter++
 		c.overflow = item
+	}
+}
+
+// TODO: test
+func (c *NonBlockingChannel[T]) Range() iter.Seq[T] {
+	if !c.initialized || c.isClosed.Load() {
+		return func(func(T) bool) {
+			return
+		}
+	}
+
+	return func(yield func(T) bool) {
+		for v := range c.channel {
+			if !yield(v) {
+				return
+			}
+		}
 	}
 }
