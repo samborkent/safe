@@ -88,7 +88,7 @@ func (m *Map[Key, Value]) Swap(key Key, value Value) (previous Value, loaded boo
 	previous, loaded = m.data[key]
 	m.data[key] = value
 	m.lock.Unlock()
-	return
+	return previous, loaded
 }
 
 func (m *Map[Key, Value]) Store(key Key, value Value) {

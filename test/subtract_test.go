@@ -5,53 +5,53 @@ import (
 	"math/rand/v2"
 	"testing"
 
+	"github.com/samborkent/check"
 	"github.com/samborkent/safe"
-	"github.com/samborkent/safe/thelper"
 )
 
 func TestSubtract(t *testing.T) {
 	u8 := uint8(math.MaxUint8)
-	thelper.Equal(t, safe.Subtract(0, u8), 0, "uint8")
+	check.Equal(t, safe.Subtract(0, u8), 0, "uint8")
 
 	u16 := uint16(math.MaxUint16)
-	thelper.Equal(t, safe.Subtract(0, u16), 0, "uint16")
+	check.Equal(t, safe.Subtract(0, u16), 0, "uint16")
 
 	u32 := uint32(math.MaxUint32)
-	thelper.Equal(t, safe.Subtract(0, u32), 0, "uint32")
+	check.Equal(t, safe.Subtract(0, u32), 0, "uint32")
 
 	u64 := uint64(math.MaxUint64)
-	thelper.Equal(t, safe.Subtract(0, u64), 0, "uint64")
+	check.Equal(t, safe.Subtract(0, u64), 0, "uint64")
 
 	u := uint(math.MaxUint)
-	thelper.Equal(t, safe.Subtract(0, u), 0, "uint")
+	check.Equal(t, safe.Subtract(0, u), 0, "uint")
 
 	p8, n8 := int8(math.MaxInt8), int8(math.MinInt8)
-	thelper.Equal(t, safe.Subtract(p8, n8), p8, "int8 positive")
-	thelper.Equal(t, safe.Subtract(n8, p8), n8, "int8 negative")
+	check.Equal(t, safe.Subtract(p8, n8), p8, "int8 positive")
+	check.Equal(t, safe.Subtract(n8, p8), n8, "int8 negative")
 
 	p16, n16 := int16(math.MaxInt16), int16(math.MinInt16)
-	thelper.Equal(t, safe.Subtract(p16, n16), p16, "int16 positive")
-	thelper.Equal(t, safe.Subtract(n16, p16), n16, "int16 negative")
+	check.Equal(t, safe.Subtract(p16, n16), p16, "int16 positive")
+	check.Equal(t, safe.Subtract(n16, p16), n16, "int16 negative")
 
 	p32, n32 := int32(math.MaxInt32), int32(math.MinInt32)
-	thelper.Equal(t, safe.Subtract(p32, n32), p32, "int32 positive")
-	thelper.Equal(t, safe.Subtract(n32, p32), n32, "int32 negative")
+	check.Equal(t, safe.Subtract(p32, n32), p32, "int32 positive")
+	check.Equal(t, safe.Subtract(n32, p32), n32, "int32 negative")
 
 	p64, n64 := int64(math.MaxInt64), int64(math.MinInt64)
-	thelper.Equal(t, safe.Subtract(p64, n64), p64, "int64 positive")
-	thelper.Equal(t, safe.Subtract(n64, p64), n64, "int64 negative")
+	check.Equal(t, safe.Subtract(p64, n64), p64, "int64 positive")
+	check.Equal(t, safe.Subtract(n64, p64), n64, "int64 negative")
 
 	pi, ni := int(math.MaxInt), int(math.MinInt)
-	thelper.Equal(t, safe.Subtract(pi, ni), pi, "int positive")
-	thelper.Equal(t, safe.Subtract(ni, pi), ni, "int negative")
+	check.Equal(t, safe.Subtract(pi, ni), pi, "int positive")
+	check.Equal(t, safe.Subtract(ni, pi), ni, "int negative")
 
 	pf32, nf32 := float32(math.MaxFloat32), float32(-math.MaxFloat32)
-	thelper.Equal(t, safe.Subtract(pf32, nf32), pf32, "float32 positive")
-	thelper.Equal(t, safe.Subtract(nf32, pf32), nf32, "float32 negative")
+	check.Equal(t, safe.Subtract(pf32, nf32), pf32, "float32 positive")
+	check.Equal(t, safe.Subtract(nf32, pf32), nf32, "float32 negative")
 
 	pf64, nf64 := float64(math.MaxFloat64), float64(-math.MaxFloat64)
-	thelper.Equal(t, safe.Subtract(pf64, nf64), pf64, "float64 positive")
-	thelper.Equal(t, safe.Subtract(nf64, pf64), nf64, "float64 negative")
+	check.Equal(t, safe.Subtract(pf64, nf64), pf64, "float64 positive")
+	check.Equal(t, safe.Subtract(nf64, pf64), nf64, "float64 negative")
 }
 
 var globalSubtractUint8 uint8

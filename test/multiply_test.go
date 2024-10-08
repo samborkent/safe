@@ -5,67 +5,67 @@ import (
 	"math/rand/v2"
 	"testing"
 
+	"github.com/samborkent/check"
 	"github.com/samborkent/safe"
-	"github.com/samborkent/safe/thelper"
 )
 
 func TestMultiply(t *testing.T) {
 	u8 := uint8(math.MaxUint8)
-	thelper.Equal(t, safe.Multiply(u8, u8), u8, "uint8")
+	check.Equal(t, safe.Multiply(u8, u8), u8, "uint8")
 
 	u16 := uint16(math.MaxUint16)
-	thelper.Equal(t, safe.Multiply(u16, u16), u16, "uint16")
+	check.Equal(t, safe.Multiply(u16, u16), u16, "uint16")
 
 	u32 := uint32(math.MaxUint32)
-	thelper.Equal(t, safe.Multiply(u32, u32), u32, "uint32")
+	check.Equal(t, safe.Multiply(u32, u32), u32, "uint32")
 
 	u64 := uint64(math.MaxUint64)
-	thelper.Equal(t, safe.Multiply(u64, u64), u64, "uint64")
+	check.Equal(t, safe.Multiply(u64, u64), u64, "uint64")
 
 	u := uint(math.MaxUint)
-	thelper.Equal(t, safe.Multiply(u, u), u, "uint")
+	check.Equal(t, safe.Multiply(u, u), u, "uint")
 
 	p8 := int8(math.MaxInt8)
-	thelper.Equal(t, safe.Multiply(p8, p8), p8, "int8 max")
+	check.Equal(t, safe.Multiply(p8, p8), p8, "int8 max")
 
 	n8 := int8(math.MinInt8)
-	thelper.Equal(t, safe.Multiply(n8, n8), n8, "int8 min")
+	check.Equal(t, safe.Multiply(n8, n8), n8, "int8 min")
 
 	p16 := int16(math.MaxInt16)
-	thelper.Equal(t, safe.Multiply(p16, p16), p16, "int16 max")
+	check.Equal(t, safe.Multiply(p16, p16), p16, "int16 max")
 
 	n16 := int16(math.MinInt16)
-	thelper.Equal(t, safe.Multiply(n16, n16), n16, "int16 min")
+	check.Equal(t, safe.Multiply(n16, n16), n16, "int16 min")
 
 	p32 := int32(math.MaxInt32)
-	thelper.Equal(t, safe.Multiply(p32, p32), p32, "int32 max")
+	check.Equal(t, safe.Multiply(p32, p32), p32, "int32 max")
 
 	n32 := int32(math.MinInt32)
-	thelper.Equal(t, safe.Multiply(n32, n32), n32, "int32 min")
+	check.Equal(t, safe.Multiply(n32, n32), n32, "int32 min")
 
 	p64 := int64(math.MaxInt64)
-	thelper.Equal(t, safe.Multiply(p64, p64), p64, "int64 max")
+	check.Equal(t, safe.Multiply(p64, p64), p64, "int64 max")
 
 	n64 := int64(math.MinInt64)
-	thelper.Equal(t, safe.Multiply(n64, n64), n64, "int64 min")
+	check.Equal(t, safe.Multiply(n64, n64), n64, "int64 min")
 
 	pi := int64(math.MaxInt64)
-	thelper.Equal(t, safe.Multiply(pi, pi), pi, "int max")
+	check.Equal(t, safe.Multiply(pi, pi), pi, "int max")
 
 	ni := int64(math.MinInt64)
-	thelper.Equal(t, safe.Multiply(ni, ni), ni, "int min")
+	check.Equal(t, safe.Multiply(ni, ni), ni, "int min")
 
 	pf32 := float32(math.MaxFloat32)
-	thelper.Equal(t, safe.Multiply(pf32, pf32), pf32, "float32 max")
+	check.Equal(t, safe.Multiply(pf32, pf32), pf32, "float32 max")
 
 	nf32 := float32(-math.MaxFloat32)
-	thelper.Equal(t, safe.Multiply(nf32, nf32), nf32, "float32 min")
+	check.Equal(t, safe.Multiply(nf32, nf32), nf32, "float32 min")
 
 	pf64 := float64(math.MaxFloat64)
-	thelper.Equal(t, safe.Multiply(pf64, pf64), pf64, "float64 max")
+	check.Equal(t, safe.Multiply(pf64, pf64), pf64, "float64 max")
 
 	nf64 := float64(-math.MaxFloat64)
-	thelper.Equal(t, safe.Multiply(nf64, nf64), nf64, "float64 min")
+	check.Equal(t, safe.Multiply(nf64, nf64), nf64, "float64 min")
 }
 
 var globalMultiplyUint8 uint8

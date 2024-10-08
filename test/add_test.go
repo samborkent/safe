@@ -5,66 +5,66 @@ import (
 	"math/rand/v2"
 	"testing"
 
+	"github.com/samborkent/check"
 	"github.com/samborkent/safe"
-	"github.com/samborkent/safe/thelper"
 )
 
 func TestAdd(t *testing.T) {
 	t.Parallel()
 
 	var au8, bu8 uint8 = math.MaxUint8, math.MaxUint8
-	thelper.Equal(t, safe.Add(au8, bu8), uint8(math.MaxUint8), "uint8")
+	check.Equal(t, safe.Add(au8, bu8), uint8(math.MaxUint8))
 
 	var au16, bu16 uint16 = math.MaxUint16, math.MaxUint16
-	thelper.Equal(t, safe.Add(au16, bu16), uint16(math.MaxUint16), "uint16")
+	check.Equal(t, safe.Add(au16, bu16), uint16(math.MaxUint16), "uint16")
 
 	var au32, bu32 uint32 = math.MaxUint32, math.MaxUint32
-	thelper.Equal(t, safe.Add(au32, bu32), uint32(math.MaxUint32), "uint32")
+	check.Equal(t, safe.Add(au32, bu32), uint32(math.MaxUint32), "uint32")
 
 	var au64, bu64 uint64 = math.MaxUint64, math.MaxUint64
-	thelper.Equal(t, safe.Add(au64, bu64), uint64(math.MaxUint64), "uint64")
+	check.Equal(t, safe.Add(au64, bu64), uint64(math.MaxUint64), "uint64")
 
 	var ap8, bp8 int8 = math.MaxInt8, math.MaxInt8
-	thelper.Equal(t, safe.Add(ap8, bp8), int8(math.MaxInt8), "int8 overflow")
+	check.Equal(t, safe.Add(ap8, bp8), int8(math.MaxInt8), "int8 overflow")
 
 	var an8, bn8 int8 = math.MinInt8, math.MinInt8
-	thelper.Equal(t, safe.Add(an8, bn8), int8(math.MinInt8), "int8 underflow")
+	check.Equal(t, safe.Add(an8, bn8), int8(math.MinInt8), "int8 underflow")
 
 	var ap16, bp16 int16 = math.MaxInt16, math.MaxInt16
-	thelper.Equal(t, safe.Add(ap16, bp16), int16(math.MaxInt16), "int16 overflow")
+	check.Equal(t, safe.Add(ap16, bp16), int16(math.MaxInt16), "int16 overflow")
 
 	var an16, bn16 int16 = math.MinInt16, math.MinInt16
-	thelper.Equal(t, safe.Add(an16, bn16), int16(math.MinInt16), "int16 underflow")
+	check.Equal(t, safe.Add(an16, bn16), int16(math.MinInt16), "int16 underflow")
 
 	var ap32, bp32 int32 = math.MaxInt32, math.MaxInt32
-	thelper.Equal(t, safe.Add(ap32, bp32), int32(math.MaxInt32), "int32 overflow")
+	check.Equal(t, safe.Add(ap32, bp32), int32(math.MaxInt32), "int32 overflow")
 
 	var an32, bn32 int32 = math.MinInt32, math.MinInt32
-	thelper.Equal(t, safe.Add(an32, bn32), int32(math.MinInt32), "int32 underflow")
+	check.Equal(t, safe.Add(an32, bn32), int32(math.MinInt32), "int32 underflow")
 
 	var ap64, bp64 int64 = math.MaxInt64, math.MaxInt64
-	thelper.Equal(t, safe.Add(ap64, bp64), int64(math.MaxInt64), "int64 overflow")
+	check.Equal(t, safe.Add(ap64, bp64), int64(math.MaxInt64), "int64 overflow")
 
 	var an64, bn64 int64 = math.MinInt64, math.MinInt64
-	thelper.Equal(t, safe.Add(an64, bn64), int64(math.MinInt64), "int64 underflow")
+	check.Equal(t, safe.Add(an64, bn64), int64(math.MinInt64), "int64 underflow")
 
 	var api, bpi int = math.MaxInt, math.MaxInt
-	thelper.Equal(t, safe.Add(api, bpi), int(math.MaxInt), "int overflow")
+	check.Equal(t, safe.Add(api, bpi), int(math.MaxInt), "int overflow")
 
 	var ani, bni int = math.MinInt, math.MinInt
-	thelper.Equal(t, safe.Add(ani, bni), int(math.MinInt), "int underflow")
+	check.Equal(t, safe.Add(ani, bni), int(math.MinInt), "int underflow")
 
 	var apf32, bpf32 float32 = math.MaxFloat32, math.MaxFloat32
-	thelper.Equal(t, safe.Add(apf32, bpf32), float32(math.MaxFloat32), "float32 overflow")
+	check.Equal(t, safe.Add(apf32, bpf32), float32(math.MaxFloat32), "float32 overflow")
 
 	var anf32, bnf32 float32 = -math.MaxFloat32, -math.MaxFloat32
-	thelper.Equal(t, safe.Add(anf32, bnf32), float32(-math.MaxFloat32), "float32 underflow")
+	check.Equal(t, safe.Add(anf32, bnf32), float32(-math.MaxFloat32), "float32 underflow")
 
 	var apf64, bpf64 float64 = math.MaxFloat64, math.MaxFloat64
-	thelper.Equal(t, safe.Add(apf64, bpf64), float64(math.MaxFloat64), "float64 overflow")
+	check.Equal(t, safe.Add(apf64, bpf64), float64(math.MaxFloat64), "float64 overflow")
 
 	var anf64, bnf64 float64 = -math.MaxFloat64, -math.MaxFloat64
-	thelper.Equal(t, safe.Add(anf64, bnf64), float64(-math.MaxFloat64), "float64 underflow")
+	check.Equal(t, safe.Add(anf64, bnf64), float64(-math.MaxFloat64), "float64 underflow")
 }
 
 var globalAddUint8 uint8

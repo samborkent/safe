@@ -29,7 +29,10 @@ var (
 func RequireTypeAssert[T any](value any) (typ T, err error) {
 	defer func() {
 		if r := recover(); r != nil {
-			_, _ = fmt.Printf("PANIC RECOVERED: safe.RequireTypeAssert: %s\n", r.(error).Error())
+			err, ok := r.(error)
+			if ok {
+				_, _ = fmt.Printf("PANIC RECOVERED: safe.RequireTypeAssert: %s\n", err.Error())
+			}
 		}
 	}()
 

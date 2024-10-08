@@ -1,8 +1,8 @@
 # safe
 
-Toe-caps for your foot guns. [WIP]
+Toe-caps for your Golang foot guns. [WIP]
 
-`safe` is the friedly counterpart to `unsafe`. One of the most common issues when developing in Go are runtime panics. This package provides a set of generic functions and data structures that safeguards you from runtime panics and are meant to mitigate programmer mistakes. Now updated to Go 1.23 to support iterators.
+`safe` is the friedly counterpart to `unsafe`. One of the most common issues when developing in Go are runtime panics. This package provides a set of generic functions and data structures that safeguards you from runtime panics and are meant to mitigate programmer mistakes.
 
 ## Data Structures
 
@@ -39,7 +39,7 @@ Upon initialization, an estimate is made of the maximum size in memory the slice
 
 `NonBlockingChannel` is a generic non-blocking channel with double-close and nil-channel panic protection.
 
-When pushing to a full channel the overflow counter is incremented. The overflow count can be retrieved using the Overflow method. When poping from an empty channel, the generic zero value is returned.
+When pushing to a full channel the overflow counter is incremented. The overflow count can be retrieved using the Overflow method. When popping from an empty channel, the generic zero value is returned.
 
 ### Map
 
@@ -49,7 +49,7 @@ When pushing to a full channel the overflow counter is incremented. The overflow
 
 `Slice` is a generic, dynamically-sized array with out-of-bounds and out-of-memory panic protection.
 
-Any index below zero will be clamped to zero. If an index is provided greater than length of the slice, the slice will automatically grow its length to that index. All values between the previous last value and the new last value will be set to the zero value of whichever type the slice is initiated with. Upon initialization, an estimate is made of the maximum size in memory the slice can take based on the runtime memory profile of the system. This will be used as the maximum allowed capacity of the slice to prevent out-of-memory panics. The determined maximum safe capacity is returned by the MaxCap method.
+Any index below zero will be clamped to zero. If an index is set that is greater than the length of the slice, the slice will automatically grow its length to that index. All values between the previous last value and the new last value will be set to the generic zero value of the slice type. Upon initialization, an estimate is made of the maximum size in memory the slice can take based on the runtime memory profile of the system. This will be used as the maximum allowed capacity of the slice to prevent out-of-memory panics. The determined maximum safe capacity is returned by the MaxCap method.
 
 ## Math helpers
 
@@ -91,7 +91,7 @@ Any index below zero will be clamped to zero. If an index is provided greater th
 
 ### RequireTypeAssert
 
-`RequireTypeAssert` is a type assertion assetion function with error return that can panic. Returns an error is type assertion fails. Instead of returning a nil-value when it asserts an interface as nil, like [TypeAssert](#type-assert) does, it will panic and recover instead.
+`RequireTypeAssert` is a type assertion assetion function with error return that can panic. Returns an error if type assertion fails. Instead of returning a nil-value when it asserts an interface as nil, like [TypeAssert](#type-assert) does, it will panic and recover instead.
 
 ## Miscellaneous
 
@@ -103,7 +103,7 @@ Any index below zero will be clamped to zero. If an index is provided greater th
 
 ### Why do the math functions use the unsafe package?
 
-At the moment (Go 1.23), Go does not offer generic type assertion or generic type switching. So, after extensive testing and becnhmarking, I found that switching of the byte size of the generic zero type is currently the fastest way to differentiate between different numeric types. However, this does require som examination of the types overflow behaviour to deduce the concrete type See the implementations of `Add`, `Divide`, `Multiply`, and `Subtract` as example.
+At the moment (Go 1.23), Go does not offer generic type assertion or generic type switching. So, after extensive testing and benchmarking, I found that switching based on the byte size of the generic zero type is currently the fastest way to differentiate between different numeric types. However, this does require some examination of the types overflow behaviour to deduce the concrete type. See the implementations of `Add`, `Divide`, `Multiply`, and `Subtract` as example.
 
 ### Why do you dereference `new(T)` without nil-checking?
 

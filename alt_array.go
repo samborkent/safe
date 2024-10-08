@@ -11,8 +11,7 @@ import (
 // A generic fixed size slice with out-of-bounds protection by clamping indices to [0, len-1].
 type AltArray[T any] struct {
 	initialized bool
-	array       []T
-	valueLocks  []*atomic.Bool
+	array       []*atomic.Pointer[T]
 }
 
 func NewAltArray[T any](length int) *AltArray[T] {
@@ -41,8 +40,7 @@ func NewAltArray[T any](length int) *AltArray[T] {
 
 	return &AltArray[T]{
 		initialized: true,
-		array:       make([]T, length),
-		valueLocks:  make([]*atomic.Bool, length),
+		array:       make([]*atomic.Pointer[T], length),
 	}
 }
 
@@ -51,12 +49,10 @@ func (a *AltArray[T]) Clear() {
 		return
 	}
 
-	zero := *new(T)
+	zero := new(T)
 
 	for i := range a.array {
-		a.valueLocks[i].Store(true)
-		a.array[i] = zero
-		a.valueLocks[i].Store(false)
+		a.array[i].Store(zero)
 	}
 }
 
@@ -65,13 +61,7 @@ func (a *AltArray[T]) Index(index int) T {
 		return *new(T)
 	}
 
-	i := a.clampIndex(index)
-
-	for {
-		if !a.valueLocks[i].Load() {
-			return a.array[i]
-		}
-	}
+	return *a.array[a.clampIndex(index)].Load()
 }
 
 func (a *AltArray[T]) Len() int {
@@ -92,26 +82,22 @@ func (a *AltArray[T]) Range() iter.Seq2[int, T] {
 
 	return func(yield func(int, T) bool) {
 		for i, v := range a.array {
-			a.valueLocks[i].Store(true)
-			defer a.valueLocks[i].Store(false)
-
-			if !yield(i, v) {
+			if !yield(i, *v.Load()) {
 				return
 			}
 		}
 	}
 }
 
-func (a *AltArray[T]) Set(index int, value T) {
+func (a *AltArray[T]) Set(index int, value T) bool {
 	if !a.initialized {
-		return
+		return false
 	}
 
 	i := a.clampIndex(index)
+	old := a.array[i].Load()
 
-	a.valueLocks[i].Store(true)
-	a.array[i] = value
-	a.valueLocks[i].Store(false)
+	return a.array[i].CompareAndSwap(old, &value)
 }
 
 // Clamp an index to the bounds of the array

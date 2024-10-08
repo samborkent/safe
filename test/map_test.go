@@ -1,11 +1,10 @@
 package safe_test
 
 import (
-	"fmt"
 	"testing"
 
+	"github.com/samborkent/check"
 	"github.com/samborkent/safe"
-	"github.com/samborkent/safe/thelper"
 )
 
 func TestMapRange(t *testing.T) {
@@ -21,8 +20,8 @@ func TestMapRange(t *testing.T) {
 	index := 0
 
 	for k, v := range m.Range() {
-		thelper.Equal(t, k, key[index], fmt.Sprintf("key %d", index))
-		thelper.Equal(t, v, val[index], fmt.Sprintf("val %d", index))
+		check.SliceContains(t, key, k)
+		check.SliceContains(t, val, v)
 		index++
 	}
 }

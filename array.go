@@ -83,6 +83,9 @@ func (a *Array[T]) Range() iter.Seq2[int, T] {
 	}
 
 	return func(yield func(int, T) bool) {
+		a.lock.RLock()
+		defer a.lock.RUnlock()
+
 		for i, v := range a.array {
 			if !yield(i, v) {
 				return

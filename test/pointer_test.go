@@ -4,8 +4,8 @@ import (
 	"math/rand/v2"
 	"testing"
 
+	"github.com/samborkent/check"
 	"github.com/samborkent/safe"
-	"github.com/samborkent/safe/thelper"
 )
 
 func TestPointerDereference(t *testing.T) {
@@ -13,25 +13,25 @@ func TestPointerDereference(t *testing.T) {
 	_ = safe.Dereference(q)
 	a := 10
 	b := &a
-	thelper.Equal(t, safe.Dereference(b), a, "dereference pointer")
+	check.Equal(t, safe.Dereference(b), a, "dereference pointer")
 }
 
 func TestPointerSetValue(t *testing.T) {
 	a := rand.Int()
 	b := &a
-	thelper.Equal(t, safe.Dereference(b), a, "dereference pointer")
+	check.Equal(t, safe.Dereference(b), a, "dereference pointer")
 
 	val1 := rand.Int()
 	safe.SetValue(&b, val1)
-	thelper.Equal(t, safe.Dereference(b), val1, "dereference set pointer")
+	check.Equal(t, safe.Dereference(b), val1, "dereference set pointer")
 
 	val2 := rand.Int()
 	var c *int
 	safe.SetValue(&c, val2)
-	thelper.Equal(t, safe.Dereference(c), val2, "dereference new set pointer")
+	check.Equal(t, safe.Dereference(c), val2, "dereference new set pointer")
 
 	val3 := rand.Int()
 	d := new(int)
 	safe.SetValue(&d, val3)
-	thelper.Equal(t, *d, val3, "unsafely dereference new set pointer")
+	check.Equal(t, *d, val3, "unsafely dereference new set pointer")
 }
