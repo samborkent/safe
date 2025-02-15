@@ -3,6 +3,7 @@ package safe
 import (
 	"iter"
 	"runtime"
+	"sync"
 	"unsafe"
 )
 
@@ -13,9 +14,10 @@ import (
 // For writing, the slice will automatically grow its underlying capacity up to,
 // a pre-determined maximum capacity base on the system memory statistics.
 type CircularSlice[T any] struct {
-	initialized bool
+	lock        sync.RWMutex
 	slice       []T
 	maxCapacity int
+	initialized bool
 }
 
 func NewCircularSlice[T any](capacity int) CircularSlice[T] {
@@ -39,7 +41,7 @@ func NewCircularSlice[T any](capacity int) CircularSlice[T] {
 	}
 }
 
-func (s CircularSlice[T]) Cap() int {
+func (s *CircularSlice[T]) Cap() int {
 	if !s.initialized {
 		return 0
 	}
@@ -47,10 +49,13 @@ func (s CircularSlice[T]) Cap() int {
 	return cap(s.slice)
 }
 
-func (s CircularSlice[T]) Grow(n int) {
+func (s *CircularSlice[T]) Grow(n int) {
 	if !s.initialized {
 		return
 	}
+
+	s.lock.Lock()
+	defer s.lock.Unlock()
 
 	if n+s.Len() > s.maxCapacity {
 		// If the index exceed the max capacity, grow up to the max capacity
@@ -61,15 +66,18 @@ func (s CircularSlice[T]) Grow(n int) {
 	}
 }
 
-func (s CircularSlice[T]) Index(index int) T {
+func (s *CircularSlice[T]) Index(index int) T {
 	if !s.initialized {
 		return *new(T)
 	}
 
+	s.lock.RLock()
+	defer s.lock.RUnlock()
+
 	return s.slice[s.wrapIndex(index)]
 }
 
-func (s CircularSlice[T]) Len() int {
+func (s *CircularSlice[T]) Len() int {
 	if !s.initialized {
 		return 0
 	}
@@ -77,20 +85,21 @@ func (s CircularSlice[T]) Len() int {
 	return len(s.slice)
 }
 
-func (s CircularSlice[T]) MaxCap() int {
+func (s *CircularSlice[T]) MaxCap() int {
 	return s.maxCapacity
 }
 
 // TODO: test
-func (a *CircularSlice[T]) Range() iter.Seq2[int, T] {
-	if !a.initialized {
-		return func(func(int, T) bool) {
-			return
-		}
+func (s *CircularSlice[T]) Range() iter.Seq2[int, T] {
+	if !s.initialized {
+		return func(func(int, T) bool) {}
 	}
 
 	return func(yield func(int, T) bool) {
-		for i, v := range a.slice {
+		s.lock.RLock()
+		defer s.lock.RUnlock()
+
+		for i, v := range s.slice {
 			if !yield(i, v) {
 				return
 			}
@@ -98,15 +107,18 @@ func (a *CircularSlice[T]) Range() iter.Seq2[int, T] {
 	}
 }
 
-func (s CircularSlice[T]) Set(index int, value T) {
+func (s *CircularSlice[T]) Set(index int, value T) {
 	if !s.initialized {
 		return
 	}
 
+	s.lock.Lock()
+	defer s.lock.Unlock()
+
 	s.slice[s.wrapIndex(index)] = value
 }
 
-func (s CircularSlice[T]) wrapIndex(index int) int {
+func (s *CircularSlice[T]) wrapIndex(index int) int {
 	if index < 0 {
 		return len(s.slice) + index
 	} else {

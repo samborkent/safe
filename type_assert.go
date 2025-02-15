@@ -6,7 +6,7 @@ import (
 	"reflect"
 )
 
-// Safer generic type assertion. Returns zero value of the provided type is assertion fails.
+// TypeAssert implements safer generic type assertion. Returns zero value of the provided type if assertion fails.
 // Beware that the asserted type can be nil in case of an interface, so this is not runtime safe!
 func TypeAssert[T any](value any) T {
 	asserted, ok := value.(T)
@@ -24,7 +24,8 @@ var (
 )
 
 // TODO: test
-// Safer type assertion with error return that can panic and recover in case the type cannot be asserted and the generic zero value is nil.
+// RequireTypeAssert implements safer type assertion with error return that can panic and recover
+// in case the type cannot be asserted and the generic zero value is nil.
 // Returns an error if type assertion fails. If the generic zero value is nil, panic and recover instead.
 func RequireTypeAssert[T any](value any) (typ T, err error) {
 	defer func() {

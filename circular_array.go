@@ -11,9 +11,9 @@ import (
 // A generic fixed size slice with out-of-bounds protection by allowing index overflow.
 // Out-of-bounds indices are wrapped around like in a circular buffer.
 type CircularArray[T any] struct {
-	initialized bool
+	lock        sync.RWMutex
 	array       []T
-	lock        *sync.RWMutex
+	initialized bool
 }
 
 func NewCircularArray[T any](length int) *CircularArray[T] {
@@ -43,7 +43,6 @@ func NewCircularArray[T any](length int) *CircularArray[T] {
 	return &CircularArray[T]{
 		initialized: true,
 		array:       make([]T, length),
-		lock:        new(sync.RWMutex),
 	}
 }
 
@@ -64,6 +63,7 @@ func (a *CircularArray[T]) Index(i int) T {
 
 	a.lock.RLock()
 	defer a.lock.RUnlock()
+
 	return a.array[a.wrapIndex(i)]
 }
 
@@ -78,12 +78,13 @@ func (a *CircularArray[T]) Len() int {
 // TODO: test
 func (a *CircularArray[T]) Range() iter.Seq2[int, T] {
 	if !a.initialized {
-		return func(func(int, T) bool) {
-			return
-		}
+		return func(func(int, T) bool) {}
 	}
 
 	return func(yield func(int, T) bool) {
+		a.lock.RLock()
+		defer a.lock.RUnlock()
+
 		for i, v := range a.array {
 			if !yield(i, v) {
 				return
@@ -98,8 +99,9 @@ func (a *CircularArray[T]) Set(i int, value T) {
 	}
 
 	a.lock.Lock()
+	defer a.lock.Unlock()
+
 	a.array[a.wrapIndex(i)] = value
-	a.lock.Unlock()
 }
 
 func (a *CircularArray[T]) wrapIndex(i int) int {

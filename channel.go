@@ -1,7 +1,6 @@
 package safe
 
 import (
-	"iter"
 	"math"
 	"runtime"
 	"sync"
@@ -11,11 +10,11 @@ import (
 
 // A generic blocking channel with double closing and nil channel protection.
 type Channel[T any] struct {
-	initialized bool
 	channel     chan T
+	lock        sync.Mutex
 	isClosed    *atomic.Bool
 	closeOnce   *sync.Once
-	lock        *sync.Mutex
+	initialized bool
 }
 
 // A generic channel with double closing and nil channel protection.
@@ -47,7 +46,6 @@ func NewChannel[T any](size int) *Channel[T] {
 		channel:     make(chan T, size),
 		isClosed:    new(atomic.Bool),
 		closeOnce:   new(sync.Once),
-		lock:        new(sync.Mutex),
 	}
 }
 
@@ -58,13 +56,13 @@ func (c *Channel[T]) Clear() {
 	}
 
 	c.lock.Lock()
+	defer c.lock.Unlock()
 
 	if !c.isClosed.Load() {
 		close(c.channel)
 	}
 
 	c.channel = make(chan T, len(c.channel))
-	c.lock.Unlock()
 }
 
 func (c *Channel[T]) Close() {
@@ -104,18 +102,10 @@ func (c *Channel[T]) Push(item T) {
 }
 
 // TODO: test
-func (c *Channel[T]) Range() iter.Seq[T] {
+func (c *Channel[T]) Range() <-chan T {
 	if !c.initialized || c.isClosed.Load() {
-		return func(func(T) bool) {
-			return
-		}
+		return nil
 	}
 
-	return func(yield func(T) bool) {
-		for v := range c.channel {
-			if !yield(v) {
-				return
-			}
-		}
-	}
+	return c.channel
 }

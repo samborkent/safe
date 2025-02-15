@@ -3,6 +3,7 @@ package safe
 import (
 	"iter"
 	"runtime"
+	"sync"
 	"unsafe"
 )
 
@@ -13,9 +14,10 @@ import (
 // For writing, the slice will automatically grow its underlying capacity up to,
 // a pre-determined maximum capacity base on the system memory statistics.
 type Slice[T any] struct {
-	initialized bool
+	lock        sync.RWMutex
 	slice       []T
 	maxCapacity int
+	initialized bool
 }
 
 func NewSlice[T any](capacity int) *Slice[T] {
@@ -52,6 +54,9 @@ func (s *Slice[T]) Index(index int) T {
 		return *new(T)
 	}
 
+	s.lock.RLock()
+	defer s.lock.RUnlock()
+
 	return s.slice[s.clampIndex(index)]
 }
 
@@ -68,15 +73,16 @@ func (s *Slice[T]) MaxCap() int {
 }
 
 // TODO: test
-func (a *Slice[T]) Range() iter.Seq2[int, T] {
-	if !a.initialized {
-		return func(func(int, T) bool) {
-			return
-		}
+func (s *Slice[T]) Range() iter.Seq2[int, T] {
+	if !s.initialized {
+		return func(func(int, T) bool) {}
 	}
 
 	return func(yield func(int, T) bool) {
-		for i, v := range a.slice {
+		s.lock.RLock()
+		defer s.lock.RUnlock()
+
+		for i, v := range s.slice {
 			if !yield(i, v) {
 				return
 			}
@@ -88,6 +94,9 @@ func (s *Slice[T]) Set(index int, value T) {
 	if !s.initialized {
 		return
 	}
+
+	s.lock.Lock()
+	defer s.lock.Unlock()
 
 	if index >= len(s.slice) {
 		if index > s.maxCapacity {

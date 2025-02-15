@@ -10,9 +10,9 @@ import (
 
 // A generic fixed size slice with out-of-bounds protection by clamping indices to [0, len-1].
 type Array[T any] struct {
-	initialized bool
+	lock        sync.RWMutex
 	array       []T
-	lock        *sync.RWMutex
+	initialized bool
 }
 
 func NewArray[T any](length int) *Array[T] {
@@ -42,7 +42,6 @@ func NewArray[T any](length int) *Array[T] {
 	return &Array[T]{
 		initialized: true,
 		array:       make([]T, length),
-		lock:        new(sync.RWMutex),
 	}
 }
 
@@ -52,8 +51,9 @@ func (a *Array[T]) Clear() {
 	}
 
 	a.lock.Lock()
+	defer a.lock.Unlock()
+
 	a.array = make([]T, a.Len())
-	a.lock.Unlock()
 }
 
 func (a *Array[T]) Index(index int) T {
@@ -63,6 +63,7 @@ func (a *Array[T]) Index(index int) T {
 
 	a.lock.RLock()
 	defer a.lock.RUnlock()
+
 	return a.array[a.clampIndex(index)]
 }
 
@@ -77,9 +78,7 @@ func (a *Array[T]) Len() int {
 // TODO: test
 func (a *Array[T]) Range() iter.Seq2[int, T] {
 	if !a.initialized {
-		return func(func(int, T) bool) {
-			return
-		}
+		return func(func(int, T) bool) {}
 	}
 
 	return func(yield func(int, T) bool) {
@@ -100,8 +99,9 @@ func (a *Array[T]) Set(index int, value T) {
 	}
 
 	a.lock.Lock()
+	defer a.lock.Unlock()
+
 	a.array[a.clampIndex(index)] = value
-	a.lock.Unlock()
 }
 
 // Clamp an index to the bounds of the array

@@ -72,26 +72,30 @@ var globalAddUint8 uint8
 func BenchmarkAddUint8(b *testing.B) {
 	var x, y, z uint8
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = uint8(float64(rand.Uint32()) * float64(math.MaxUint8) / float64(math.MaxUint32))
 		y = uint8(float64(rand.Uint32()) * float64(math.MaxUint8) / float64(math.MaxUint32))
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddUint8 = z
 }
 
 func BenchmarkSafeAddUint8(b *testing.B) {
 	var x, y, z uint8
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = uint8(float64(rand.Uint32()) * float64(math.MaxUint8) / float64(math.MaxUint32))
 		y = uint8(float64(rand.Uint32()) * float64(math.MaxUint8) / float64(math.MaxUint32))
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddUint8 = z
 }
 
@@ -100,26 +104,30 @@ var globalAddInt8 int8
 func BenchmarkAddInt8(b *testing.B) {
 	var x, y, z int8
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = int8(float64(rand.Int32()) * float64(-math.MinInt8) / float64(-math.MinInt32))
 		y = int8(float64(rand.Int32()) * float64(-math.MinInt8) / float64(-math.MinInt32))
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddInt8 = z
 }
 
 func BenchmarkSafeAddInt8(b *testing.B) {
 	var x, y, z int8
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = int8(float64(rand.Int32()) * float64(-math.MinInt8) / float64(-math.MinInt32))
 		y = int8(float64(rand.Int32()) * float64(-math.MinInt8) / float64(-math.MinInt32))
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddInt8 = z
 }
 
@@ -128,26 +136,30 @@ var globalAddUint16 uint16
 func BenchmarkAddUint16(b *testing.B) {
 	var x, y, z uint16
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = uint16(float64(rand.Uint32()) * float64(math.MaxUint16) / float64(math.MaxUint32))
 		y = uint16(float64(rand.Uint32()) * float64(math.MaxUint16) / float64(math.MaxUint32))
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddUint16 = z
 }
 
 func BenchmarkSafeAddUint16(b *testing.B) {
 	var x, y, z uint16
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = uint16(float64(rand.Uint32()) * float64(math.MaxUint16) / float64(math.MaxUint32))
 		y = uint16(float64(rand.Uint32()) * float64(math.MaxUint16) / float64(math.MaxUint32))
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddUint16 = z
 }
 
@@ -156,26 +168,30 @@ var globalAddInt16 int16
 func BenchmarkAddInt16(b *testing.B) {
 	var x, y, z int16
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = int16(float64(rand.Int32()) * float64(-math.MinInt16) / float64(-math.MinInt32))
 		y = int16(float64(rand.Int32()) * float64(-math.MinInt16) / float64(-math.MinInt32))
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddInt16 = z
 }
 
 func BenchmarkSafeAddInt16(b *testing.B) {
 	var x, y, z int16
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = int16(float64(rand.Int32()) * float64(-math.MinInt16) / float64(-math.MinInt32))
 		y = int16(float64(rand.Int32()) * float64(-math.MinInt16) / float64(-math.MinInt32))
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddInt16 = z
 }
 
@@ -184,26 +200,30 @@ var globalAddUint32 uint32
 func BenchmarkAddUint32(b *testing.B) {
 	var x, y, z uint32
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Uint32()
 		y = rand.Uint32()
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddUint32 = z
 }
 
 func BenchmarkSafeAddUint32(b *testing.B) {
 	var x, y, z uint32
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Uint32()
 		y = rand.Uint32()
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddUint32 = z
 }
 
@@ -212,26 +232,30 @@ var globalAddInt32 int32
 func BenchmarkAddInt32(b *testing.B) {
 	var x, y, z int32
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Int32()
 		y = rand.Int32()
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddInt32 = z
 }
 
 func BenchmarkSafeAddInt32(b *testing.B) {
 	var x, y, z int32
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Int32()
 		y = rand.Int32()
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddInt32 = z
 }
 
@@ -240,26 +264,30 @@ var globalAddFloat32 float32
 func BenchmarkAddFloat32(b *testing.B) {
 	var x, y, z float32
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Float32()
 		y = rand.Float32()
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddFloat32 = z
 }
 
 func BenchmarkSafeAddFloat32(b *testing.B) {
 	var x, y, z float32
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Float32()
 		y = rand.Float32()
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddFloat32 = z
 }
 
@@ -268,26 +296,30 @@ var globalAddUint64 uint64
 func BenchmarkAddUint64(b *testing.B) {
 	var x, y, z uint64
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Uint64()
 		y = rand.Uint64()
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddUint64 = z
 }
 
 func BenchmarkSafeAddUint64(b *testing.B) {
 	var x, y, z uint64
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Uint64()
 		y = rand.Uint64()
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddUint64 = z
 }
 
@@ -296,26 +328,30 @@ var globalAddInt64 int64
 func BenchmarkAddInt64(b *testing.B) {
 	var x, y, z int64
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Int64()
 		y = rand.Int64()
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddInt64 = z
 }
 
 func BenchmarkSafeAddInt64(b *testing.B) {
 	var x, y, z int64
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Int64()
 		y = rand.Int64()
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddInt64 = z
 }
 
@@ -324,26 +360,30 @@ var globalAddFloat64 float64
 func BenchmarkAddFloat64(b *testing.B) {
 	var x, y, z float64
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Float64()
 		y = rand.Float64()
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddFloat64 = z
 }
 
 func BenchmarkSafeAddFloat64(b *testing.B) {
 	var x, y, z float64
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Float64()
 		y = rand.Float64()
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddFloat64 = z
 }
 
@@ -352,26 +392,30 @@ var globalAddInt int
 func BenchmarkAddInt(b *testing.B) {
 	var x, y, z int
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Int()
 		y = rand.Int()
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddInt = z
 }
 
 func BenchmarkSafeAddInt(b *testing.B) {
 	var x, y, z int
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = rand.Int()
 		y = rand.Int()
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddInt = z
 }
 
@@ -380,25 +424,29 @@ var globalAddUint uint
 func BenchmarkAddUint(b *testing.B) {
 	var x, y, z uint
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = uint(rand.Uint64())
 		y = uint(rand.Uint64())
 		b.StartTimer()
 		z = x + y
 	}
+
 	globalAddUint = z
 }
 
 func BenchmarkSafeAddUint(b *testing.B) {
 	var x, y, z uint
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+
+	for range b.N {
 		b.StopTimer()
 		x = uint(rand.Uint64())
 		y = uint(rand.Uint64())
 		b.StartTimer()
 		z = safe.Add(x, y)
 	}
+
 	globalAddUint = z
 }

@@ -10,8 +10,8 @@ import (
 
 // A generic fixed size slice with out-of-bounds protection by clamping indices to [0, len-1].
 type AltArray[T any] struct {
-	initialized bool
 	array       []*atomic.Pointer[T]
+	initialized bool
 }
 
 func NewAltArray[T any](length int) *AltArray[T] {
@@ -75,9 +75,7 @@ func (a *AltArray[T]) Len() int {
 // TODO: test
 func (a *AltArray[T]) Range() iter.Seq2[int, T] {
 	if !a.initialized {
-		return func(func(int, T) bool) {
-			return
-		}
+		return func(func(int, T) bool) {}
 	}
 
 	return func(yield func(int, T) bool) {

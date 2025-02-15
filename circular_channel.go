@@ -1,7 +1,6 @@
 package safe
 
 import (
-	"iter"
 	"math"
 	"runtime"
 	"sync"
@@ -18,11 +17,11 @@ import (
 // Block until an new entry is available on pop.
 // If the channel is full, the oldest entry will be dropped on push.
 type CircularChannel[T any] struct {
-	initialized bool
 	channel     chan T
+	lock        sync.Mutex
 	isClosed    *atomic.Bool
 	closeOnce   *sync.Once
-	lock        *sync.Mutex
+	initialized bool
 }
 
 func NewCircularChannel[T any](size int) *CircularChannel[T] {
@@ -53,7 +52,6 @@ func NewCircularChannel[T any](size int) *CircularChannel[T] {
 		channel:     make(chan T, size),
 		isClosed:    new(atomic.Bool),
 		closeOnce:   new(sync.Once),
-		lock:        new(sync.Mutex),
 	}
 }
 
@@ -64,13 +62,13 @@ func (c *CircularChannel[T]) Clear() {
 	}
 
 	c.lock.Lock()
+	defer c.lock.Unlock()
 
 	if !c.isClosed.Load() {
 		close(c.channel)
 	}
 
 	c.channel = make(chan T, len(c.channel))
-	c.lock.Unlock()
 }
 
 func (c *CircularChannel[T]) Close() {
@@ -114,18 +112,10 @@ func (c *CircularChannel[T]) Push(item T) {
 }
 
 // TODO: test
-func (c *CircularChannel[T]) Range() iter.Seq[T] {
+func (c *CircularChannel[T]) Range() <-chan T {
 	if !c.initialized || c.isClosed.Load() {
-		return func(func(T) bool) {
-			return
-		}
+		return nil
 	}
 
-	return func(yield func(T) bool) {
-		for v := range c.channel {
-			if !yield(v) {
-				return
-			}
-		}
-	}
+	return c.channel
 }

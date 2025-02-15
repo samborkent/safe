@@ -1,7 +1,6 @@
 package safe
 
 import (
-	"iter"
 	"math"
 	"runtime"
 	"sync"
@@ -15,13 +14,13 @@ import (
 // Returns the zero value of the generic type if no item is available on the channel.
 // Increases the overflow counter when the channel is full.
 type NonBlockingChannel[T any] struct {
-	initialized     bool
+	lock            sync.Mutex
 	channel         chan T
 	isClosed        *atomic.Bool
 	closeOnce       *sync.Once
-	lock            *sync.Mutex
 	overflowCounter uint64
 	overflow        T
+	initialized     bool
 }
 
 func NewNonBlockingChannel[T any](size int) *NonBlockingChannel[T] {
@@ -52,7 +51,6 @@ func NewNonBlockingChannel[T any](size int) *NonBlockingChannel[T] {
 		channel:     make(chan T, size),
 		isClosed:    new(atomic.Bool),
 		closeOnce:   new(sync.Once),
-		lock:        new(sync.Mutex),
 	}
 }
 
@@ -63,13 +61,13 @@ func (c *NonBlockingChannel[T]) Clear() {
 	}
 
 	c.lock.Lock()
+	defer c.lock.Unlock()
 
 	if !c.isClosed.Load() {
 		close(c.channel)
 	}
 
 	c.channel = make(chan T, len(c.channel))
-	c.lock.Unlock()
 }
 
 func (c *NonBlockingChannel[T]) Close() {
@@ -126,18 +124,10 @@ func (c *NonBlockingChannel[T]) Push(item T) {
 }
 
 // TODO: test
-func (c *NonBlockingChannel[T]) Range() iter.Seq[T] {
+func (c *NonBlockingChannel[T]) Range() <-chan T {
 	if !c.initialized || c.isClosed.Load() {
-		return func(func(T) bool) {
-			return
-		}
+		return nil
 	}
 
-	return func(yield func(T) bool) {
-		for v := range c.channel {
-			if !yield(v) {
-				return
-			}
-		}
-	}
+	return c.channel
 }
